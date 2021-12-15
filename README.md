@@ -18,7 +18,7 @@
   * [具体入口实现](https://github.com/gdpl2112/mirai-bot-first-src/blob/master/main/java/io/github/kloping/Mirai/Main/Handlers/MyHandler.java#L75)
   * [具体出口实现](https://github.com/gdpl2112/mirai-bot-first-src/blob/master/main/java/io/github/kloping/Mirai/Main/Resource.java#L135)
 * mirai 的 [启动目录](https://github.com/gdpl2112/mirai-bot-first-src/blob/master/main/java/io/github/kloping/Mirai/Main/)
-  * 通过 [BotStarter](https://github.com/gdpl2112/mirai-bot-first-src/blob/master/main/java/io/github/gdpl2112/Mirai/Main/BotStarter.java) 
+  * 通过 [BotStarter](https://github.com/gdpl2112/mirai-bot-first-src/blob/master/main/java/io/github/kloping/Mirai/Main/BotStarter.java) 
     获取配置文件中的 bot id password 登录
   * 以及消息通道注册,处理 
 
