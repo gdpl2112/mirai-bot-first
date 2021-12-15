@@ -1,0 +1,5 @@
+SaverRootUrl=http://localhost:8082
+mysql.url=jdbc:mysql://localhost:3306/mydb1?characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai&rewriteBatchedStatements=true
+mysql.user=root
+mysql.password=root
+log.level=2

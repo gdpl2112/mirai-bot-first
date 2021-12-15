@@ -1,0 +1,28 @@
+{
+  "bots": [
+    {
+      "passWord": "password",
+      "qq": 123456789
+    },
+    {
+      "passWord": "password",
+      "qq": 987654321
+    },
+    {
+      "passWord": "password",
+      "qq": 111111
+    },
+    {
+      "passWord": "password",
+      "qq": 222222
+    },
+    {
+      "passWord": "password",
+      "qq": 333333
+    },
+    {
+      "passWord": "password",
+      "qq": 444444
+    }
+  ]
+}
