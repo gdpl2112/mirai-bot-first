@@ -24,4 +24,4 @@
 
 - 该rep 以转移至 [gdpl2112](https://github.com/gdpl2112) organizations
 - 且仅对其内成员可见
-- 同时欢迎加入
+- 同时[欢迎加入群聊](https://jq.qq.com/?_wv=1027&k=30zOUA9B)
