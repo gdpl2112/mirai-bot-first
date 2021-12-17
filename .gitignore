@@ -5,6 +5,7 @@ Libs/dates/users/*
 Libs/dates/mainfist/*
 Libs/dates/games/dates/*
 Libs/dates/games/skills/*
+Libs/dates/games/tasks
 Libs/dates/mainfist/groups/*
 cache1
 conf/bots.conf.json
