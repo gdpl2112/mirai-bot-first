@@ -8,6 +8,7 @@ Libs/dates/games/skills/*
 Libs/dates/games/tasks
 Libs/dates/mainfist/groups/*
 cache1
+temp
 Test-Temp
 conf/bots.conf.json
 conf/conf.txt
