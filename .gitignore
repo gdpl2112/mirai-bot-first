@@ -9,6 +9,7 @@ Libs/dates/games/tasks
 Libs/dates/mainfist/groups/*
 cache1
 temp
+bots
 plugin-starter
 Test-Temp
 conf/bots.conf.json
