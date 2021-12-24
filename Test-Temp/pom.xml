@@ -20,5 +20,10 @@
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
         </dependency>
+        <dependency>
+            <groupId>io.github.kloping</groupId>
+            <artifactId>mirai-frist</artifactId>
+            <version>1.0</version>
+        </dependency>
     </dependencies>
 </project>
