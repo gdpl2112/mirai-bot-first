@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>金魂币记录</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+          integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<body>
+<script>
+    function tips(mess) {
+        tips(mess, 1500)
+    }
+
+    function tips(mess, t) {
+        let hidvalue_str = mess;
+        let divWidth = 100;
+        let divHeight = 100;
+        let iLeft = ($(window).width() - divWidth) / 2;
+        let iTop = ($(window).height() - divHeight) / 2 + $(document).scrollTop();
+        let divhtml = $("<h1>" + hidvalue_str + "</h1>").css({
+            position: 'absolute',
+            top: iTop + 'px',
+            left: iLeft + 'px',
+            display: 'none',
+            width: divWidth + 'px',
+            height: divHeight + 'px',
+            color: 'red',
+        });
+        divhtml.appendTo('body').fadeIn();
+        divhtml.appendTo('body').fadeOut(t);
+    }
+
+    function getDateFormat(t) {
+        return jsDateFormatter(new Date(t))
+    }
+
+    function jsDateFormatter(dateInput) {
+        let year = dateInput.getFullYear();
+        let month = dateInput.getMonth() + 1;
+        let theDate = dateInput.getDate();
+
+        let hour = dateInput.getHours();
+        let minute = dateInput.getMinutes();
+        let second = dateInput.getSeconds();
+
+        if (month < 10) {
+            month = '0' + month;
+        }
+
+        if (theDate < 10) {
+            theDate = '0' + theDate;
+        }
+        if (hour < 10) {
+            hour = '0' + hour;
+        }
+        if (minute < 10) {
+            minute = '0' + minute;
+        }
+        if (second < 10) {
+            second = '0' + second;
+        }
+        return year + "-" + month + "-" + theDate + " " + hour + ":" + minute + ":" + second;
+    }
+</script>
+<script src="js/index.js"></script>
+<form id="capForm" class="form-inline">
+    <div class="form-group mb-2">
+        <img :src="data.src" class="card-img-top" alt="验证码">
+    </div>
+    <div class="form-group mx-sm-3 mb-2">
+        <label for="authCode" class="sr-only">验证码</label>
+        <input id="authCode" type="text" class="form-control" placeholder="请输入验证码">
+    </div>
+    <button type="button" @click="auth(data.type0)" class="btn btn-primary mb-2">确定</button>
+</form>
+<div id="main-list">
+    <ul class="list-group" v-for="e in listR">
+        <li :class="'list-group-item '+(e.type1==='add'?
+        'list-group-item-success':'list-group-item-warning')">
+            <h5 v-text="(e.type1==='add'?'+':'-') + e.many"></h5>
+            <p v-text="e.desc"></p>
+            <p v-text="'剩余:'+e.now"></p>
+            <p v-text="getDateFormat(e.time)"></p>
+        </li>
+    </ul>
+</div>
+<script>
+    let recordData = []
+    let authCode = "";
+    if (location.href.indexOf("=") === -1)
+        location.href = "wq/m0.png"
+    let qid = location.href.substr(location.href.indexOf("=") + 1)
+
+    function IsPC() {
+        let userAgentInfo = navigator.userAgent;
+        let Agents = ["Android", "iPhone",
+            "SymbianOS", "Windows Phone",
+            "iPad", "iPod"];
+        let flag = true;
+        for (let v = 0; v < Agents.length; v++) {
+            if (userAgentInfo.indexOf(Agents[v]) > 0) {
+                flag = false;
+                break;
+            }
+        }
+        return flag;
+    }
+
+    let flag = IsPC(); //true为PC端，false为手机端
+    let vm1 = new Vue({
+        el: "#capForm",
+        created: function () {
+            axios.get("/getCap").then(function (response) {
+                vm1.data = response.data
+                vm1.data.type0 = 0
+            }).catch(function (err) {
+                alert(err);
+            })
+        }, data: {
+            data: {},
+            data0: {},
+        }, methods: {
+            auth: function (type) {
+                if (type === 0) {
+                    let str = $("#authCode").val()
+                    axios.get("/AuthCap?id=" + vm1.data.uuid + "&code=" + str + "&qid=" + qid,).then(function (response) {
+                        if (response.data === "err")
+                            alert("验证失败")
+                        else {
+                            authCode = response.data;
+                            console.log("获取=>" + authCode)
+                            vm1.data.src = "https://sqimg.qq.com/qq_product_operations/im/qqlogo/imlogo_b.png"
+                            vm1.data.type0 = 1
+                            if (flag)
+                                tips("已通过QQ群发送验证码到您的私信", 3000)
+                            else
+                                alert("已通过QQ群发送验证码到您的私信")
+                            let l = $("#authCode")
+                            l.val("")
+                            l.attr("placeholder", "请输入QQ收到的验证码")
+                        }
+                    }).catch(function (err) {
+                        alert(err);
+                    })
+                } else {
+                    let str = $("#authCode").val()
+                    axios.get("/AuthCap0?canId=" + authCode + "&code=" + str + "&qid=" + qid,).then(function (response) {
+                        if (response.data === "err")
+                            alert("验证失败")
+                        else {
+                            recordData = response.data
+                            $("#capForm").remove()
+                            vm2.mmmm()
+                        }
+                    }).catch(function (err) {
+                        alert(err);
+                    })
+                }
+            }
+        }
+    });
+    let vm2 = new Vue({
+        el: "#main-list",
+        created: function () {
+        }, data: {
+            listR: []
+        }, methods: {
+            mmmm: function () {
+                vm2.listR = recordData
+            },
+            getDateFormat: function (t) {
+                return jsDateFormatter(new Date(t))
+            }
+        }
+    });
+</script>
+</body>
+</html>
