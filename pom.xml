@@ -7,9 +7,6 @@
     <artifactId>mirai-frist</artifactId>
     <packaging>pom</packaging>
     <version>1.0</version>
-    <modules>
-        <module>Test-Temp</module>
-    </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
@@ -32,7 +29,7 @@
         <dependency>
             <groupId>io.github.Kloping</groupId>
             <artifactId>SpringTool</artifactId>
-            <version>0.3.5</version>
+            <version>0.3.6</version>
         </dependency>
         <dependency>
             <groupId>io.github.Kloping</groupId>
