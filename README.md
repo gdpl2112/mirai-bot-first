@@ -15,8 +15,8 @@
 * [Project](https://github.com/gdpl2112/mirai-bot-first-src/tree/master/main/java/Project) 
     为主体内容 <br>
     其入口  将消息转化为 string 依靠 [SpringTool](https://github.com/Kloping/my-spring-tool) 匹配 Action的形式执行<br>
-  * [具体入口实现](https://github.com/gdpl2112/mirai-bot-first-src/blob/master/main/java/io/github/kloping/Mirai/Main/Handlers/MyHandler.java#L75)
-  * [具体出口实现](https://github.com/gdpl2112/mirai-bot-first-src/blob/master/main/java/io/github/kloping/Mirai/Main/Resource.java#L135)
+  * [具体入口实现](https://github.com/gdpl2112/mirai-bot-first-src/blob/master/main/java/io/github/kloping/Mirai/Main/Handlers/MyHandler.java)
+  * [具体出口实现](https://github.com/gdpl2112/mirai-bot-first-src/blob/master/main/java/io/github/kloping/Mirai/Main/Resource.java)
 * mirai 的 [启动目录](https://github.com/gdpl2112/mirai-bot-first-src/blob/master/main/java/io/github/kloping/Mirai/Main/)
   * 通过 [BotStarter](https://github.com/gdpl2112/mirai-bot-first-src/blob/master/main/java/io/github/kloping/Mirai/Main/BotStarter.java) 
     获取配置文件中的 bot id password 登录
