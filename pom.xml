@@ -15,7 +15,7 @@
     </parent>
     <properties>
         <kotlin.version>1.6.0-RC</kotlin.version>
-        <mirai-version>2.9.1</mirai-version>
+        <mirai-version>2.10.0</mirai-version>
     </properties>
 
     <repositories>

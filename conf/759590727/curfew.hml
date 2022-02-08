@@ -1,0 +1,6 @@
+->io.github.kloping.mirai0.Entitys.Curfew
+	gid: 759590727
+	tos: ->java.util.HashSet
+		0: "5:50"
+	froms: ->java.util.HashSet
+		0: "00:50"
