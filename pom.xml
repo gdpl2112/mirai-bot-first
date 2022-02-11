@@ -36,12 +36,6 @@
             <artifactId>JvUtils</artifactId>
             <version>0.3.6</version>
         </dependency>
-        <!--        mp3 to amr-->
-        <!--        <dependency>
-                    <groupId>com.github.dadiyang</groupId>
-                    <artifactId>jave</artifactId>
-                    <version>1.0.5</version>
-                </dependency>-->
         <dependency>
             <groupId>com.github.penggle</groupId>
             <artifactId>kaptcha</artifactId>
