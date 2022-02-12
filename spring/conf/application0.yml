@@ -1,6 +1,0 @@
-spring:
-  datasource:
-    url: jdbc:mysql://49.232.209.180:3306/mydb0?characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai&rewriteBatchedStatements=true
-    username: root
-    password: kloping_
-    driver-class-name: com.mysql.jdbc.Driver
