@@ -1,0 +1,2 @@
+Illegal.txt=淦
+Illegal.send=艹

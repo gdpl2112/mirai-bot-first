@@ -9,8 +9,7 @@ Libs/dates/games/dates/*
 Libs/dates/games/skills/*
 Libs/dates/games/tasks
 Libs/dates/mainfist/groups/*
-spring/conf/application.a.yml
-spring/conf/application.b.yml
+spring/conf/application0.yml
 conf/Landlord
 Kt-native
 cache1
