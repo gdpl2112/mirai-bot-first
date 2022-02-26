@@ -35,19 +35,14 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.vdurmont</groupId>
-            <artifactId>emoji-java</artifactId>
-            <version>4.0.0</version>
-        </dependency>
-        <dependency>
             <groupId>io.github.Kloping</groupId>
             <artifactId>SpringTool</artifactId>
-            <version>0.4.1</version>
+            <version>0.4.6</version>
         </dependency>
         <dependency>
             <groupId>io.github.Kloping</groupId>
             <artifactId>JvUtils</artifactId>
-            <version>0.3.9</version>
+            <version>0.4.1</version>
         </dependency>
         <dependency>
             <groupId>com.github.penggle</groupId>
