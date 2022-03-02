@@ -5,10 +5,10 @@ spring:
     password: root
     driver-class-name: com.mysql.jdbc.Driver
   resources:
-    static-locations: file:./images,file:./static,file:./temp
+    static-locations: classpath:static,file:./images,file:./static,file:./temp
   web:
     resources:
-      static-locations: file:./images,file:./static,file:./temp
+      static-locations: classpath:static,file:./images,file:./static,file:./temp
 
 server:
   port: 20049
