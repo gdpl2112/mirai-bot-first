@@ -17,3 +17,6 @@ server:
     uri-encoding: UTF-8
     max-threads: 1000
     max-http-header-size: 8096
+
+auth:
+  pwd: 123456
