@@ -20,3 +20,8 @@ server:
 
 auth:
   pwd: 123456
+
+mc:
+  ip: localhost
+  port: 20043
+  gid: 794238572
