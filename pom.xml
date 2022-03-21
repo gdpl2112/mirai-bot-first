@@ -7,6 +7,9 @@
     <artifactId>mirai-frist</artifactId>
     <packaging>pom</packaging>
     <version>1.0</version>
+    <modules>
+        <module>commons</module>
+    </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
@@ -34,6 +37,12 @@
     </repositories>
 
     <dependencies>
+        <dependency>
+            <groupId>io.github.kloping</groupId>
+            <artifactId>commons</artifactId>
+            <version>1.0</version>
+            <scope>compile</scope>
+        </dependency>
         <dependency>
             <groupId>io.github.Kloping</groupId>
             <artifactId>SpringTool</artifactId>
@@ -143,5 +152,6 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
+
     </dependencies>
 </project>
