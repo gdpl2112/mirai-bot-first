@@ -9,6 +9,7 @@
     <version>1.0</version>
     <modules>
         <module>commons</module>
+<!--        <module>test-module</module>-->
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -64,8 +65,12 @@
         </dependency>
         <!--        spring redis非关系型spring 依赖-->
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-redis</artifactId>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-redis</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>redis.clients</groupId>
+            <artifactId>jedis</artifactId>
         </dependency>
         <!--        拼音支持-->
         <dependency>
