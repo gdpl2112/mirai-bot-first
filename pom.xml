@@ -37,77 +37,97 @@
     </repositories>
 
     <dependencies>
+        <!--        公用的实体类了模块-->
         <dependency>
             <groupId>io.github.kloping</groupId>
             <artifactId>commons</artifactId>
             <version>1.0</version>
             <scope>compile</scope>
         </dependency>
+        <!--        自制框架-->
         <dependency>
             <groupId>io.github.Kloping</groupId>
             <artifactId>SpringTool</artifactId>
             <version>0.4.8</version>
         </dependency>
+        <!--        自制工具-->
         <dependency>
             <groupId>io.github.Kloping</groupId>
             <artifactId>JvUtils</artifactId>
             <version>0.4.1</version>
         </dependency>
+        <!--        生成验证图片的框架-->
         <dependency>
             <groupId>com.github.penggle</groupId>
             <artifactId>kaptcha</artifactId>
             <version>2.3.2</version>
         </dependency>
+        <!--        spring redis非关系型spring 依赖-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
+        </dependency>
+        <!--        拼音支持-->
         <dependency>
             <groupId>io.github.wnjustdoit</groupId>
             <artifactId>pinyin4j</artifactId>
             <version>2.6.0</version>
         </dependency>
+        <!--        mybatis springboot-->
         <dependency>
             <groupId>org.mybatis.spring.boot</groupId>
             <artifactId>mybatis-spring-boot-starter</artifactId>
             <version>2.2.0</version>
         </dependency>
+        <!--        mybatis plus springboot-->
         <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-boot-starter</artifactId>
             <version>3.4.2</version>
         </dependency>
+        <!--        mysql驱动-->
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
         </dependency>
+        <!--        sql数据源驱动-->
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>druid-spring-boot-starter</artifactId>
             <version>1.2.6</version>
         </dependency>
+        <!--        lambok-->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>RELEASE</version>
             <scope>compile</scope>
         </dependency>
+        <!--        kotlin支持-->
         <dependency>
             <groupId>org.jetbrains.kotlin</groupId>
             <artifactId>kotlin-stdlib-jdk8</artifactId>
             <version>${kotlin.version}</version>
         </dependency>
+
         <dependency>
             <groupId>org.reflections</groupId>
             <artifactId>reflections</artifactId>
             <version>0.9.11</version>
         </dependency>
+        <!--        fastjson-->
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
             <version>1.2.73</version>
         </dependency>
+        <!--        gson-->
         <dependency>
             <groupId>com.google.code.gson</groupId>
             <artifactId>gson</artifactId>
             <version>2.8.6</version>
         </dependency>
+        <!--        mirai-->
         <dependency>
             <groupId>net.mamoe</groupId>
             <artifactId>mirai-core-all</artifactId>
@@ -128,30 +148,34 @@
             <artifactId>mirai-console-terminal</artifactId>
             <version>${mirai-version}</version>
         </dependency>
+        <!--        jsoup-->
         <dependency>
             <groupId>org.jsoup</groupId>
             <artifactId>jsoup</artifactId>
             <version>1.14.2</version>
         </dependency>
+        <!--        netty-->
         <dependency>
             <groupId>io.netty</groupId>
             <artifactId>netty-all</artifactId>
             <version>4.1.68.Final</version>
         </dependency>
+        <!--        图片处理工具-->
         <dependency>
             <groupId>net.coobird</groupId>
             <artifactId>thumbnailator</artifactId>
             <version>0.4.14</version>
         </dependency>
+        <!--        gift 动态图处理工具-->
         <dependency>
             <groupId>com.madgag</groupId>
             <artifactId>animated-gif-lib</artifactId>
             <version>1.2</version>
         </dependency>
+        <!--        springboot web -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-
     </dependencies>
 </project>
