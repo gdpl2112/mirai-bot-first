@@ -15,6 +15,8 @@ import lombok.experimental.Accessors;
 @NoArgsConstructor
 @Accessors(chain = true)
 public class Father {
+    public static final String ALL = "all";
+
     @TableId(type = IdType.ASSIGN_UUID)
     private Long id;
     private String permission;

@@ -98,6 +98,7 @@ public final class ResourceSet {
 
         public static final String DISPLAY_IMAGES = "相似图片";
         public static final String IMAGE_SOURCE = "图片来源";
+        public static final String THIS_STR = "this";
     }
 
     public static final class FinalFormat {
@@ -120,7 +121,7 @@ public final class ResourceSet {
         public static final String ADDHL_TIPS = "恢复了%s点的魂力";
         public static final String ADDHJ_TIPS = "恢复了%s点的精神力";
         public static final String HL_NOT_ENOUGH_TIPS = "魂力不足:您当前的魂力值=>%s%%";
-        ;
+        public static final String AT_FORMAT = "[@%s]";
     }
 
     public static final class FinalValue {
