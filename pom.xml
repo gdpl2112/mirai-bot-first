@@ -49,7 +49,12 @@
         <dependency>
             <groupId>io.github.Kloping</groupId>
             <artifactId>SpringTool</artifactId>
-            <version>0.4.8</version>
+            <version>0.4.9</version>
+        </dependency>
+        <dependency>
+            <groupId>io.github.Kloping</groupId>
+            <artifactId>spt-redis</artifactId>
+            <version>0.1</version>
         </dependency>
         <!--        自制工具-->
         <dependency>

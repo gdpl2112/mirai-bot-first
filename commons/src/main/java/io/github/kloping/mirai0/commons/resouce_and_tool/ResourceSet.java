@@ -99,6 +99,9 @@ public final class ResourceSet {
         public static final String DISPLAY_IMAGES = "相似图片";
         public static final String IMAGE_SOURCE = "图片来源";
         public static final String THIS_STR = "this";
+        public static final String WAITING_STR = "等待中...";
+        public static final String PARTICIPATION_STR = "参与";
+        public static final String NOT_PARTICIPATION_STR = "未参与";
     }
 
     public static final class FinalFormat {
