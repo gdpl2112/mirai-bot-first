@@ -18,7 +18,7 @@ import java.util.Set;
 @NoArgsConstructor
 @Accessors(chain = true)
 public class Father {
-    public static final String ALL = "all";
+    public static final String ALL = "0";
     public static final String SPLIT = ",";
 
     @TableId(type = IdType.ASSIGN_UUID)
