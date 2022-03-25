@@ -38,7 +38,12 @@ public class Father {
         return getGids().contains(gid);
     }
 
+    public String getPermission() {
+        return permission;
+    }
+
     public String addPermission(long gid) {
+        permission = "";
         Set<Long> set = getGids();
         set.add(gid);
         for (Long aLong : set) {
