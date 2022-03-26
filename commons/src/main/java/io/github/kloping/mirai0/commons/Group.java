@@ -6,6 +6,7 @@ import java.util.Map;
  * @author github-kloping
  */
 public class Group {
+    public static Map<Long, Group> upHistGroupMap;
     private Long id;
     private String nickName;
 
@@ -16,8 +17,6 @@ public class Group {
         this.id = id;
         this.nickName = nickName;
     }
-
-    public static Map<Long, Group> upHistGroupMap;
 
     public static Group create(long id, String name, Map<Long, Group> histGroupMap) {
         if (histGroupMap.containsKey(id)) return histGroupMap.get(id);

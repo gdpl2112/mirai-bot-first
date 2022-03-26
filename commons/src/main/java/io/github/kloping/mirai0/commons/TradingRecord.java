@@ -11,23 +11,24 @@ import lombok.experimental.Accessors;
 @Data
 @Accessors(chain = true)
 public class TradingRecord {
-    public enum Type0 {
-        gold("gold"), score("score");
-        String v;
-
-        Type0(String v) {
-            this.v = v;
-        }
-    }
-
-    public enum Type1 {
-        lost("lost"), add("add");
-        String v;
-
-        Type1(String v) {
-            this.v = v;
-        }
-    }
+    @TableField("`type0`")
+    private Type0 type0;
+    @TableField("`type1`")
+    private Type1 type1;
+    @TableField("`from`")
+    private Long from;
+    @TableField("`to`")
+    private Long to;
+    @TableField("`main`")
+    private Long main;
+    @TableField("`now`")
+    private Long now;
+    @TableField("`many`")
+    private Long many;
+    @TableField("`desc`")
+    private String desc;
+    @TableField("`time`")
+    private Long time = System.currentTimeMillis();
 
     @JSONField(name = "type0")
     public void setType0(String type0) {
@@ -48,34 +49,6 @@ public class TradingRecord {
         this.type1 = type1;
         return this;
     }
-
-    @TableField("`type0`")
-    private Type0 type0;
-
-    @TableField("`type1`")
-    private Type1 type1;
-
-    @TableField("`from`")
-    private Long from;
-
-    @TableField("`to`")
-    private Long to;
-
-    @TableField("`main`")
-    private Long main;
-
-    @TableField("`now`")
-    private Long now;
-
-    @TableField("`many`")
-    private Long many;
-
-    @TableField("`desc`")
-    private String desc;
-
-    @TableField("`time`")
-    private Long time = System.currentTimeMillis();
-
 
     public TradingRecord setTo(Integer to) {
         this.to = to.longValue();
@@ -105,5 +78,23 @@ public class TradingRecord {
     public TradingRecord setMany(Long v) {
         this.many = v.longValue();
         return this;
+    }
+
+    public enum Type0 {
+        gold("gold"), score("score");
+        String v;
+
+        Type0(String v) {
+            this.v = v;
+        }
+    }
+
+    public enum Type1 {
+        lost("lost"), add("add");
+        String v;
+
+        Type1(String v) {
+            this.v = v;
+        }
     }
 }

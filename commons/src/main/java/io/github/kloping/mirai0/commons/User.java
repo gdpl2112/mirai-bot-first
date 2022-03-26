@@ -8,6 +8,7 @@ import java.util.Objects;
  * @author github-kloping
  */
 public class User {
+    public static final Map<Long, User> HIST = new HashMap<>();
     private Long id = -1L;
     private Long group = -1L;
     private String nickName = "=";
@@ -19,8 +20,6 @@ public class User {
         this.nickName = nickName;
         this.name = name;
     }
-
-    public static final Map<Long, User> HIST = new HashMap<>();
 
     public static User create(long id, Long group, String nickName, String name) {
         if (!HIST.containsKey(id)) HIST.put(id, new User(id, group, nickName, name));

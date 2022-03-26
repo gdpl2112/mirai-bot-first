@@ -21,16 +21,6 @@ import java.util.Map;
 @AllArgsConstructor
 @NoArgsConstructor
 public class SoulAttribute {
-    @TableId
-    private Integer wh;
-    private Integer hideChance = 0;
-    private Integer hpChance = 0;
-    private Integer hlChance = 0;
-    private Integer hjChance = 0;
-    private Integer hpEffect = 10;
-    private Integer hlEffect = 10;
-    private Integer hjEffect = 10;
-
     public static final Map<String, Field> MAP = new HashMap<>();
     public static final Map<String, String> MAP0 = new HashMap<>();
 
@@ -45,6 +35,16 @@ public class SoulAttribute {
         MAP0.put("hpe", "hpEffect");
         MAP0.put("hle", "hlEffect");
     }
+
+    @TableId
+    private Integer wh;
+    private Integer hideChance = 0;
+    private Integer hpChance = 0;
+    private Integer hlChance = 0;
+    private Integer hjChance = 0;
+    private Integer hpEffect = 10;
+    private Integer hlEffect = 10;
+    private Integer hjEffect = 10;
 
     public Integer appendSoulBone(SoulBone soulBone) {
         Integer v0 = 0;

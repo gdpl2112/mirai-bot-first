@@ -5,7 +5,6 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.annotation.JSONField;
 import io.github.kloping.MySpringTool.entity.RequestData;
 
-import java.net.URLEncoder;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
@@ -21,6 +20,7 @@ public class AiRequest implements RequestData {
     private Integer vol = 5;
     private Integer aue = 6;
     private String tex;
+    private Map<String, String> data = new HashMap<>();
 
     public String getType() {
         return type;
@@ -77,8 +77,6 @@ public class AiRequest implements RequestData {
     public void setTex(String tex) {
         this.tex = tex;
     }
-
-    private Map<String, String> data = new HashMap<>();
 
     @Override
     @JSONField(deserialize = false, serialize = false)

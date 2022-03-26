@@ -13,14 +13,12 @@ import lombok.experimental.Accessors;
 @Setter
 public abstract class TagPack {
     private final String TAG;
-
-    public TagPack(String tag) {
-        this.TAG = tag;
-    }
-
     private Long q;
     private Long value;
     private Boolean effected = false;
+    public TagPack(String tag) {
+        this.TAG = tag;
+    }
 
     /**
      * 生效

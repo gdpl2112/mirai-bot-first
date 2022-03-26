@@ -8,6 +8,8 @@ import java.util.concurrent.ConcurrentHashMap;
  * @version 1.0
  */
 public class BaseInfoTemp {
+    public static final Map<Long, Long> VERTIGO_T0 = new ConcurrentHashMap<>();
+
     public static boolean letVertigo(long q, long t) {
         VERTIGO_T0.put(q, System.currentTimeMillis() + t);
         return true;
@@ -27,6 +29,4 @@ public class BaseInfoTemp {
     public static boolean isVertigo(long q) {
         return VERTIGO_T0.containsKey(q) && VERTIGO_T0.get(q) > System.currentTimeMillis();
     }
-
-    public static final Map<Long, Long> VERTIGO_T0 = new ConcurrentHashMap<>();
 }

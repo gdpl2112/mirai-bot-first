@@ -76,24 +76,6 @@ public enum Mora {
         System.out.println(c.getValue() + ":\t\t" + i3);
     }
 
-    public int Reff(Mora m) {
-        if (this.value_.equals(m.value_)) {
-            return 0;
-        }
-        if (m.getValue().equals("石头") && this.value_.equals("剪刀"))
-            return -1;
-        else if (m.getValue().equals("剪刀") && this.value_.equals("布"))
-            return -1;
-        else if (m.getValue().equals("布") && this.value_.equals("石头"))
-            return -1;
-        else
-            return 1;
-    }
-
-    public String getValue() {
-        return value_;
-    }
-
     public static Mora getLost(Mora mora) {
         switch (mora) {
             case a:
@@ -116,5 +98,23 @@ public enum Mora {
                 return a;
         }
         return null;
+    }
+
+    public int Reff(Mora m) {
+        if (this.value_.equals(m.value_)) {
+            return 0;
+        }
+        if (m.getValue().equals("石头") && this.value_.equals("剪刀"))
+            return -1;
+        else if (m.getValue().equals("剪刀") && this.value_.equals("布"))
+            return -1;
+        else if (m.getValue().equals("布") && this.value_.equals("石头"))
+            return -1;
+        else
+            return 1;
+    }
+
+    public String getValue() {
+        return value_;
     }
 }

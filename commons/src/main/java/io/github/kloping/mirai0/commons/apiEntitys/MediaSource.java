@@ -52,17 +52,17 @@ public class MediaSource {
         return title;
     }
 
+    public MediaSource setTitle(String title) {
+        this.title = title;
+        return this;
+    }
+
     public String getFromUrl() {
         return fromUrl;
     }
 
     public void setFromUrl(String fromUrl) {
         this.fromUrl = fromUrl;
-    }
-
-    public MediaSource setTitle(String title) {
-        this.title = title;
-        return this;
     }
 
     public String getUrl() {

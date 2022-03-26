@@ -15,11 +15,24 @@ import java.util.Set;
  * @version 1.0
  */
 public class Curfew {
+    public static final SimpleDateFormat FORMAT = new SimpleDateFormat("HH:mm");
     private long gid;
     private Set<String> froms = new HashSet<>();
     private Set<String> tos = new HashSet<>();
 
     public Curfew() {
+    }
+
+    public static Curfew getInstance(long gid) {
+        String hmlStr = FileUtils.getStringFromFile("./conf/" + gid + "/curfew.hml");
+        Curfew curfew = null;
+        if (hmlStr == null || hmlStr.trim().isEmpty()) {
+            curfew = new Curfew();
+        } else {
+            curfew = HMLObject.parseObject(hmlStr).toJavaObject(Curfew.class);
+        }
+        curfew.setGid(gid);
+        return curfew;
     }
 
     public long getGid() {
@@ -44,20 +57,6 @@ public class Curfew {
 
     public void setTos(Set<String> tos) {
         this.tos = tos;
-    }
-
-    public static final SimpleDateFormat FORMAT = new SimpleDateFormat("HH:mm");
-
-    public static Curfew getInstance(long gid) {
-        String hmlStr = FileUtils.getStringFromFile("./conf/" + gid + "/curfew.hml");
-        Curfew curfew = null;
-        if (hmlStr == null || hmlStr.trim().isEmpty()) {
-            curfew = new Curfew();
-        } else {
-            curfew = HMLObject.parseObject(hmlStr).toJavaObject(Curfew.class);
-        }
-        curfew.setGid(gid);
-        return curfew;
     }
 
     public void save() {

@@ -1,7 +1,9 @@
 package io.github.kloping.mirai0.commons.eEntitys;
 
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
 import java.util.concurrent.CopyOnWriteArraySet;
 
 import static io.github.kloping.mirai0.commons.resouce_and_tool.CommonSource.RANDOM;
