@@ -8,7 +8,6 @@ import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 
 import java.io.Serializable;
-import java.lang.reflect.Field;
 
 
 /**
@@ -32,18 +31,11 @@ public class UserScore implements Serializable {
     private Long timesDay = -1L;
     @TableId
     private Long who;
+//    private Long earnings;
+//    private Long debuffs;
 
-    public void check() {
-        for (Field declaredField : this.getClass().getDeclaredFields()) {
-            try {
-                declaredField.setAccessible(true);
-                Object o = declaredField.get(this);
-                if (o == null) {
-                    declaredField.set(this, declaredField.get(new UserScore()));
-                }
-            } catch (IllegalAccessException e) {
-                e.printStackTrace();
-            }
-        }
+    public UserScore addScore(Number s0) {
+        this.score += s0.longValue();
+        return this;
     }
 }

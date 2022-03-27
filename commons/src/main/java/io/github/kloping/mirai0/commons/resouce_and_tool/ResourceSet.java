@@ -103,6 +103,8 @@ public final class ResourceSet {
         public static final String WAITING_STR = "等待中...";
         public static final String PARTICIPATION_STR = "参与";
         public static final String NOT_PARTICIPATION_STR = "未参与";
+
+        public static final String TASK_OVER_TIME = "任务过期,未完成";
     }
 
     public static final class FinalFormat {
