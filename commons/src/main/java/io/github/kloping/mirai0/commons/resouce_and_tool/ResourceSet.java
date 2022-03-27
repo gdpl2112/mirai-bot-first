@@ -162,6 +162,6 @@ public final class ResourceSet {
         /**
          * 每周最大收益
          */
-        public static final int MAX_EARNINGS = 80000;
+        public static final int MAX_EARNINGS = 90000;
     }
 }
