@@ -31,8 +31,17 @@ public class UserScore implements Serializable {
     private Long timesDay = -1L;
     @TableId
     private Long who;
-//    private Long earnings;
-//    private Long debuffs;
+    private Long earnings = 0L;
+    private Long debuffs = 0L;
+
+    public UserScore record(Number s0){
+        if (s0.longValue() > 0) {
+            earnings += s0.longValue();
+        } else {
+            debuffs += s0.longValue();
+        }
+        return this;
+    }
 
     public UserScore addScore(Number s0) {
         this.score += s0.longValue();

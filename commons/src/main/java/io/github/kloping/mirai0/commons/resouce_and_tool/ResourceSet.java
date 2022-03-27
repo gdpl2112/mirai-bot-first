@@ -105,6 +105,8 @@ public final class ResourceSet {
         public static final String NOT_PARTICIPATION_STR = "未参与";
 
         public static final String TASK_OVER_TIME = "任务过期,未完成";
+        public static final String MAX_EARNINGS_TIPS = "每周最大收益";
+        public static final String WORK_LONG_STR = "打工";
     }
 
     public static final class FinalFormat {
@@ -128,6 +130,7 @@ public final class ResourceSet {
         public static final String ADDHJ_TIPS = "恢复了%s点的精神力";
         public static final String HL_NOT_ENOUGH_TIPS = "魂力不足:您当前的魂力值=>%s%%";
         public static final String AT_FORMAT = "[@%s]";
+        public static final String EARNINGS_TIPS_FORMAT = "该周收益\n收益:%s\n损失:%s";
     }
 
     public static final class FinalValue {
@@ -156,5 +159,9 @@ public final class ResourceSet {
          * 一次出售数量
          */
         public static final int SLE_ONE_MAX = 20;
+        /**
+         * 每周最大收益
+         */
+        public static final int MAX_EARNINGS = 80000;
     }
 }
