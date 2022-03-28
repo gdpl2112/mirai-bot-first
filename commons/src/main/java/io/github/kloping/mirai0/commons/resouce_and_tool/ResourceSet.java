@@ -107,6 +107,11 @@ public final class ResourceSet {
         public static final String TASK_OVER_TIME = "任务过期,未完成";
         public static final String MAX_EARNINGS_TIPS = "每周最大收益";
         public static final String WORK_LONG_STR = "打工";
+        public static final String PLEASE_NOT_REPEAT = "请不要重复";
+        public static final String CREATE_CHALLENGE_OK = "创建完成,其他玩家 挑战@ 即可";
+        public static final String JOIN_CHALLENGE_OK = "挑战即将开始\n";
+        public static final String CHALLENGE_ING = "挑战中...";
+        public static final String CHALLENGE_USED = "挑战额外已使用";
     }
 
     public static final class FinalFormat {
@@ -125,9 +130,9 @@ public final class ResourceSet {
         public static final String NOT_FOUND_SEE = "没有找到\"%s\"见\"%s\"";
         public static final String CANT_BIGGER = "不可大于%s";
         public static final String TRY_MUTE_SECONDS = "尝试禁言ta %s 秒";
-        public static final String ADDHP_TIPS = "恢复了%s点的血量";
-        public static final String ADDHL_TIPS = "恢复了%s点的魂力";
-        public static final String ADDHJ_TIPS = "恢复了%s点的精神力";
+        public static final String ADD_HP_TIPS = "恢复了%s点的血量";
+        public static final String ADD_HL_TIPS = "恢复了%s点的魂力";
+        public static final String ADD_HJ_TIPS = "恢复了%s点的精神力";
         public static final String HL_NOT_ENOUGH_TIPS = "魂力不足:您当前的魂力值=>%s%%";
         public static final String AT_FORMAT = "[@%s]";
         public static final String EARNINGS_TIPS_FORMAT = "该周收益\n收益:%s\n损失:%s";
@@ -163,5 +168,13 @@ public final class ResourceSet {
          * 每周最大收益
          */
         public static final int MAX_EARNINGS = 90000;
+        /**
+         * 攻击冷却
+         */
+        public static final int ATT_CD = 30 * 1000;
+        /**
+         * 攻击前摇
+         */
+        public static final int ATT_PRE_CD = 4500;
     }
 }
