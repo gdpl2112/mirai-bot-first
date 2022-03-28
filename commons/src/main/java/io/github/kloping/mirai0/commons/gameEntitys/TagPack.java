@@ -16,6 +16,7 @@ public abstract class TagPack {
     private Long q;
     private Long value;
     private Boolean effected = false;
+
     public TagPack(String tag) {
         this.TAG = tag;
     }
