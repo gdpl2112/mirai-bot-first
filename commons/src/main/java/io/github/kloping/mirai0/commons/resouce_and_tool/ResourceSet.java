@@ -176,5 +176,13 @@ public final class ResourceSet {
          * 攻击前摇
          */
         public static final int ATT_PRE_CD = 4500;
+        /**
+         * 猜拳赢的几率
+         */
+        public static final int MORA_WIN = 47;
+        /**
+         * 猜拳平局几率
+         */
+        public static final int MORA_P = 4;
     }
 }
