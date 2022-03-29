@@ -1,5 +1,9 @@
 package io.github.kloping.mirai0.commons.resouce_and_tool;
 
+import io.github.kloping.MySpringTool.exceptions.NoRunException;
+
+import static io.github.kloping.mirai0.commons.resouce_and_tool.ResourceSet.FinalNormalString.NOT_OPEN_STR;
+
 /**
  * @author github-kloping
  */
@@ -114,6 +118,11 @@ public final class ResourceSet {
         public static final String CHALLENGE_USED = "挑战额外已使用";
     }
 
+    public static final class FinalNormalString {
+        public static final String ALL_STR = "全部";
+        public static final String NOT_OPEN_STR = "未开启";
+    }
+
     public static final class FinalFormat {
         public static final String TIPS_BUY_SUCCEED = "%s\n购买成功";
         public static final String WORK_WAIT_TIPS = "打工冷却中.\n大约等待%s";
@@ -136,9 +145,11 @@ public final class ResourceSet {
         public static final String HL_NOT_ENOUGH_TIPS = "魂力不足:您当前的魂力值=>%s%%";
         public static final String AT_FORMAT = "[@%s]";
         public static final String EARNINGS_TIPS_FORMAT = "该周收益\n收益:%s\n损失:%s";
+
     }
 
     public static final class FinalValue {
+        public static final NoRunException NOT_OPEN_NO_RUN_EXCEPTION = new NoRunException(NOT_OPEN_STR);
         /**
          * 精神力抵消后 剩余倍数 <br/>
          * {@link Project.services.detailServices.GameDetailService#onSpiritAttack}
@@ -184,5 +195,6 @@ public final class ResourceSet {
          * 猜拳平局几率
          */
         public static final int MORA_P = 4;
+
     }
 }
