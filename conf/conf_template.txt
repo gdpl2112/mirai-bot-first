@@ -3,3 +3,4 @@ Illegal.send=艹
 handled.url=http://49.232.209.180/abo?id=291841860&key=hrskloping
 superQL=3474006766
 bot.myName=0号
+bot.protocol=ANDROID_PHONE
