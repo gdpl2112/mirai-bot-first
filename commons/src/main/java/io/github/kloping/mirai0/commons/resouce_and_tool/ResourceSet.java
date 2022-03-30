@@ -121,6 +121,7 @@ public final class ResourceSet {
     public static final class FinalNormalString {
         public static final String ALL_STR = "全部";
         public static final String NOT_OPEN_STR = "未开启";
+        public static final String NOT_SELECT_STR = "未选择";
     }
 
     public static final class FinalFormat {
