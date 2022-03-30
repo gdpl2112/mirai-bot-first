@@ -115,4 +115,14 @@ public interface BaseInfo {
      * @return
      */
     String getTips();
+
+    /**
+     * set att
+     *
+     * @param att
+     * @param <T>
+     * @return
+     */
+    <T extends BaseInfo> T setAtt(Long att);
+
 }
