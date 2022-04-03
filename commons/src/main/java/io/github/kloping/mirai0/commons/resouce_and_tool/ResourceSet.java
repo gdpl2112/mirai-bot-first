@@ -124,6 +124,8 @@ public final class ResourceSet {
         public static final String NOT_SELECT_STR = "未选择";
         public static final String VERTIGO_ING = "眩晕中..";
         public static final String ATTACK_BREAK = "攻击被打断";
+        public static final String BG_TIPS = "闭关中..";
+        public static final String PLAYER_BG_TIPS = "玩家正在闭关中...";
     }
 
     public static final class FinalFormat {
@@ -133,6 +135,7 @@ public final class ResourceSet {
         public static final String BUY_OBJ_WAIT_TIPS = "购买物品冷却中.\n大约等待%s";
         public static final String XL_WAIT_TIPS = "修炼冷却中.\n大约等待%s";
         public static final String TXL_WAIT_TIPS = "双修冷却中.\n大约等待%s";
+        public static final String BG_WAIT_TIPS = "闭关冷却中.\n大约等待%s";
         public static final String ACTIVITY_WAIT_TIPS = "活动进入冷却中.\n大约等待%s";
         public static final String USE_SKILL_WAIT_TIPS = "魂技冷却中.\n大约等待%s";
         public static final String SKILL_INFO_WAIT_TIPS = "魂技信息修改冷却中.\n大约等待%s";
@@ -198,6 +201,9 @@ public final class ResourceSet {
          * 猜拳平局几率
          */
         public static final int MORA_P = 4;
-
+        /**
+         * 闭关冷却
+         */
+        public static final long BG_CD = 1000 * 60 * 60L;
     }
 }
