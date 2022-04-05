@@ -22,5 +22,5 @@ public class AutoReply {
     private String k;
     private String v;
     private String time;
-    private Integer deleteStat;
+    private Integer deleteStat = 0;
 }
