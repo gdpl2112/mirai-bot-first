@@ -126,6 +126,7 @@ public final class ResourceSet {
         public static final String ATTACK_BREAK = "攻击被打断";
         public static final String BG_TIPS = "闭关中..";
         public static final String PLAYER_BG_TIPS = "玩家正在闭关中...";
+        public static final String FUNCTION_CLOSEING_TIPS = "功能暂时关闭";
     }
 
     public static final class FinalFormat {
