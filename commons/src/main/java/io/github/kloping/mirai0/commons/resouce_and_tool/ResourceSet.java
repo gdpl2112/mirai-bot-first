@@ -123,6 +123,7 @@ public final class ResourceSet {
         public static final String NOT_OPEN_STR = "未开启";
         public static final String NOT_SELECT_STR = "未选择";
         public static final String VERTIGO_ING = "眩晕中..";
+        public static final String CANT_USE_ING = "不可用魂技中..";
         public static final String ATTACK_BREAK = "攻击被打断";
         public static final String BG_TIPS = "闭关中..";
         public static final String PLAYER_BG_TIPS = "玩家正在闭关中...";
