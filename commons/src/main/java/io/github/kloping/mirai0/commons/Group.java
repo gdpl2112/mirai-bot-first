@@ -1,12 +1,13 @@
 package io.github.kloping.mirai0.commons;
 
+import java.util.HashMap;
 import java.util.Map;
 
 /**
  * @author github-kloping
  */
 public class Group {
-    public static Map<Long, Group> upHistGroupMap;
+    public static Map<Long, Group> upHistGroupMap = new HashMap<>();
     private Long id;
     private String nickName;
 
