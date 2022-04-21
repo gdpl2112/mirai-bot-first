@@ -1,0 +1,11 @@
+->com.github.kloping.iwanna.buy.impl.simple.ConfCommodity
+	owner: -1
+	nowPrice: 6000
+	originalPrice: 6000
+	size: 5
+	src: ""
+	id: 3
+	time: -1
+	sid: 0
+	name: "联想电脑"
+

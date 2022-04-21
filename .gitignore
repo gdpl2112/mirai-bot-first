@@ -1,5 +1,6 @@
 ### Java template
 # Compiled class file
+base/*
 Libs/dates/History/*
 Libs/records
 Libs/customRandReply
