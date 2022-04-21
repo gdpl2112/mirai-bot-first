@@ -63,7 +63,7 @@
         <dependency>
             <groupId>io.github.Kloping</groupId>
             <artifactId>JvUtils</artifactId>
-            <version>0.4.1</version>
+            <version>0.4.2</version>
         </dependency>
         <!--生成验证图片的框架-->
         <dependency>
