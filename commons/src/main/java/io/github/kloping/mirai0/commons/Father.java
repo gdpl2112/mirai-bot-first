@@ -23,7 +23,7 @@ public class Father {
 
     @TableId(type = IdType.ASSIGN_UUID)
     private Long id;
-    private String permission;
+    private String permission="";
 
     public Set<Long> getGids() {
         Set<Long> set = new HashSet<>();
@@ -43,8 +43,8 @@ public class Father {
     }
 
     public String addPermission(long gid) {
-        permission = "";
         Set<Long> set = getGids();
+        permission = "";
         set.add(gid);
         for (Long aLong : set) {
             permission = permission + SPLIT + aLong;
