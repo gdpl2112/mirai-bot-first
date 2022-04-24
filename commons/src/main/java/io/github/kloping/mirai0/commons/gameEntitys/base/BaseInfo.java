@@ -114,7 +114,7 @@ public interface BaseInfo {
      *
      * @return
      */
-    String getTips();
+    <T> T getTips();
 
     /**
      * set att
