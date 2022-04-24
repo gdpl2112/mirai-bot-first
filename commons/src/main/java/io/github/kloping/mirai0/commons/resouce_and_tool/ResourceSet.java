@@ -23,6 +23,7 @@ public final class ResourceSet {
         public static final String LEFT_BRACKETS_STR = "[";
         public static final String PLAYER_NOT_REGISTERED = "该玩家尚未注册";
         public static final String NOT_FOUND_AT = "未发现at";
+        public static final String NOT_FOUND_VALUE = "未发现值";
         public static final String NOT_FOUND = "未发现";
         public static final String CUSTOM_MENU_STR = "回话菜单";
         public static final String NO_PERMISSION_STR = "无权限";
@@ -116,6 +117,8 @@ public final class ResourceSet {
         public static final String JOIN_CHALLENGE_OK = "挑战即将开始\n";
         public static final String CHALLENGE_ING = "挑战中...";
         public static final String CHALLENGE_USED = "挑战额外已使用";
+        public static final String ATT_WAIT_TIPS = "攻击冷却中.";
+        public static final String SYNC_GHOST_TIPS = "该魂兽,正在被攻击中";
     }
 
     public static final class FinalNormalString {
@@ -140,6 +143,7 @@ public final class ResourceSet {
         public static final String XL_WAIT_TIPS = "修炼冷却中.\n大约等待%s";
         public static final String TXL_WAIT_TIPS = "双修冷却中.\n大约等待%s";
         public static final String BG_WAIT_TIPS = "闭关冷却中.\n大约等待%s";
+        public static final String ATT_WAIT_TIPS = "攻击冷却中.\n大约等待%s";
         public static final String ACTIVITY_WAIT_TIPS = "活动进入冷却中.\n大约等待%s";
         public static final String USE_SKILL_WAIT_TIPS = "魂技冷却中.\n大约等待%s";
         public static final String SKILL_INFO_WAIT_TIPS = "魂技信息修改冷却中.\n大约等待%s";
@@ -153,6 +157,7 @@ public final class ResourceSet {
         public static final String ADD_HL_TIPS = "恢复了%s点的魂力";
         public static final String ADD_HJ_TIPS = "恢复了%s点的精神力";
         public static final String HL_NOT_ENOUGH_TIPS = "魂力不足:您当前的魂力值=>%s%%";
+        public static final String HL_NOT_ENOUGH_TIPS0 = "魂力不足!!";
         public static final String AT_FORMAT = "[@%s]";
         public static final String EARNINGS_TIPS_FORMAT = "该周收益\n收益:%s\n损失:%s";
         public static final String WHERE_MEMBER_IS_MY_WIFE = "今天你的群友老婆是\n <Pic:http://q2.qlogo.cn/headimg_dl?dst_uin=%s&spec=100> 【%s】(%s) ";
@@ -192,7 +197,7 @@ public final class ResourceSet {
         /**
          * 攻击冷却
          */
-        public static final int ATT_CD = 30 * 1000;
+        public static final int ATT_CD = 10000;
         /**
          * 攻击前摇
          */
@@ -209,7 +214,9 @@ public final class ResourceSet {
          * 闭关冷却
          */
         public static final long BG_CD = 1000 * 60 * 60L;
-
+        /**
+         * 最大等级
+         */
         public static final Integer MAX_LEVEL = 150;
     }
 }
