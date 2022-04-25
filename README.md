@@ -29,7 +29,11 @@
 
 ## 使用
 
-在您的mydb1数库中执行 文件 
+在您的mydb1数库中执行 文件 [sql](https://gitee.com/kloping/mirai-bot-first/blob/master/sql/init.sql)
+
+[mydb1-主库](https://gitee.com/kloping/mirai-bot-first/blob/master/application.yml#L3)
+[mydb1存储消息用](https://gitee.com/kloping/mirai-bot-first/blob/master/spring/conf/application0.yml)
+可自行更名
 
 更改配置
 
