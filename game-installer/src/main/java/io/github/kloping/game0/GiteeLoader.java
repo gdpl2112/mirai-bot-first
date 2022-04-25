@@ -12,6 +12,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
+import java.util.List;
 import java.util.concurrent.CountDownLatch;
 
 import static io.github.kloping.common.Public.EXECUTOR_SERVICE;
@@ -31,13 +32,17 @@ public class GiteeLoader {
     public static final String R1 = "raw";
 
     public static Folder get(String url) throws Exception {
+        return get(url, null);
+    }
+
+    public static Folder get(String url, List<String> ignoreItems) throws Exception {
         Folder folder = new Folder();
         folder.setPath(url);
-        load(folder);
+        load(folder, ignoreItems);
         return folder;
     }
 
-    private static void load(Folder folder) throws IOException {
+    private static void load(Folder folder, List<String> ignoreItems) throws IOException {
         Document doc = Jsoup.connect(folder.getPath())
                 .userAgent(USER_AGENT).get();
         for (Element e1 : doc.getElementsByClass(E1_CLASS)) {
@@ -46,11 +51,14 @@ public class GiteeLoader {
             String name = ea.attr("title");
             String u0 = ea.attr("href");
             String path = BASE + u0;
+            if (ignoreItems != null) {
+                if (ignoreItems.contains(name)) continue;
+            }
             if (FOLDER.equals(type)) {
                 Folder f0 = new Folder();
                 f0.setPath(path);
                 f0.setName(name);
-                load(f0);
+                load(f0, ignoreItems);
                 folder.addItem(f0);
             } else {
                 GiteeFile file = new GiteeFile();

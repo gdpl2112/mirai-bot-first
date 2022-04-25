@@ -16,16 +16,20 @@ public class ResourceLoader {
     public static final String BASE0 =
 //            "https://gitee.com/kloping/mirai-bot-first/tree/master/images";
             "https://gitee.com/kloping/mirai-bot-first";
-
+    public static final String BASE1 = "https://gitee.com/kloping/mirai-bot-first/raw/master/.ignoreItems";
     public static final List<String> IGNORE_ITEMS = new ArrayList<>();
     public static final String IGNORE_ITEMS_NAME = ".ignoreItems";
 
     public static void loadResource(String path) {
         Logger.getLogger(ResourceLoader.class).info("start check resource ");
         try {
-            Folder folder = GiteeLoader.get(BASE0);
-            GiteeFile gf = (GiteeFile) folder.getItemByName(IGNORE_ITEMS_NAME);
-            loadResource(path, BASE0);
+            GiteeFile gf = new GiteeFile();
+            gf.setDownloadUrl(BASE1);
+            for (String line : gf.getLines()) {
+                IGNORE_ITEMS.add(line.trim());
+            }
+            Folder folder = GiteeLoader.get(BASE0, IGNORE_ITEMS);
+            loadResource(path, BASE0,folder);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -45,6 +49,7 @@ public class ResourceLoader {
         try {
             File pFile = new File(path);
             for (Item item : folder.items) {
+                if (IGNORE_ITEMS.contains(item.getName())) continue;
                 if (item instanceof GiteeFile) {
                     GiteeFile file = (GiteeFile) item;
                     File f1 = new File(pFile, file.getName());

@@ -12,6 +12,6 @@ public class Installer {
     public static void main(String[] args) {
         File file = new File("D:\\Projects\\OwnProjects\\MyMirai_01\\game-installer\\space");
         loadLibs(new File(file, "libs").getAbsolutePath());
-        loadResource(new File(file, "images").getAbsolutePath());
+        loadResource(file.getAbsolutePath());
     }
 }
