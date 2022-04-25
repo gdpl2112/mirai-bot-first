@@ -9,6 +9,7 @@
     <version>1.0</version>
     <modules>
         <module>commons</module>
+        <module>game-installer</module>
         <!--<module>test-module</module>-->
     </modules>
     <parent>
