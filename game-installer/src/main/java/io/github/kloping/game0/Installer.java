@@ -10,13 +10,12 @@ import static io.github.kloping.game0.ResourceLoader.loadResource;
  */
 public class Installer {
     public static void main(String[] args) {
-        File file = new File("D:\\Projects\\OwnProjects\\MyMirai_01\\game-installer\\space");
-        loadLibs(new File(file, "libs").getAbsolutePath());
+        File file = new File("./");
+        loadLibs(new File(file, "classpath").getAbsolutePath());
         loadResource(file.getAbsolutePath());
         loadSrc(file);
     }
 
     private static void loadSrc(File file) {
-
     }
 }
