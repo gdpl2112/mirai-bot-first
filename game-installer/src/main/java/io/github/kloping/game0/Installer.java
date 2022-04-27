@@ -31,10 +31,15 @@ public class Installer {
         if (local_version < jo.getDouble("version")) {
             update(jo.getString("url"),jo.getInteger("size"));
         }
+        start();
+    }
+
+    private static void start() {
     }
 
     private static void update(String url,int max) {
         try {
+            getLogger().info("start update");
             File file = new File(PARENT, "all.zip");
             byte[] bytes = new byte[1024 * 1024 * 3];
             InputStream is = new URL(url).openStream();
@@ -44,22 +49,24 @@ public class Installer {
             while ((len = is.read(bytes)) != -1) {
                 fos.write(bytes, 0, len);
                 cur += len;
-                Logger.getLogger(Installer.class).info("download " + toPercent(cur, max) + "%");
+                getLogger().info("download " + toPercent(cur, max) + "%");
             }
-            unzip();
+            unzip(file);
         } catch (IOException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    private static void unzip() {
-
+    private static void unzip(File file) throws Exception {
+        ZipUtils.unzip(file.getAbsolutePath(), new File(PARENT, "project").getAbsolutePath());
     }
 
     public static final File PARENT = new File("D:\\Projects\\OwnProjects\\MyMirai_01\\game-installer\\space");
 
     private static void loadLocal() {
-        File file = new File(PARENT, "pom.xml");
+        File file = new File(PARENT, "project/mirai-bot-first-master/pom.xml");
         try {
             if (file.exists()) {
                 Document document = Jsoup.parse(FileUtils.getStringFromFile(file.getAbsolutePath()));
@@ -116,5 +123,9 @@ public class Installer {
     public static String device(Long l, double v, int d) {
         double f = l / v;
         return String.format("%." + d + "f", f);
+    }
+
+    public static final Logger getLogger() {
+        return Logger.getLogger(Installer.class);
     }
 }
