@@ -7,9 +7,6 @@ import io.github.kloping.file.FileUtils;
 import io.github.kloping.io.ReadUtils;
 import io.github.kloping.url.UrlUtils;
 import org.apache.log4j.Logger;
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
 
 import java.io.*;
 import java.net.URL;
@@ -23,8 +20,14 @@ public class Installer {
     private static final boolean IS_WIN = System.getProperty("os.name").toLowerCase().contains("win");
     private static final boolean IS_LINUX = System.getProperty("os.name").toLowerCase().indexOf("linux") >= 0;
 
+    public static File PARENT = null;
 
     public static void main(String[] args) {
+        if (args.length > 0) {
+            PARENT = new File(args[0]);
+        } else {
+            PARENT = new File("./");
+        }
         loadLocal();
         load();
     }
@@ -124,20 +127,10 @@ public class Installer {
         ZipUtils.unzip(file.getAbsolutePath(), new File(PARENT, "project").getAbsolutePath());
     }
 
-    public static final File PARENT = new File("D:\\Projects\\OwnProjects\\MyMirai_01\\game-installer\\space");
-
     private static void loadLocal() {
-        File file = new File(PARENT, "project/mirai-bot-first-master/pom.xml");
-        try {
-            if (file.exists()) {
-                Document document = Jsoup.parse(FileUtils.getStringFromFile(file.getAbsolutePath()));
-                Element e0 = document.getElementsByTag("project").get(0);
-                Element e1 = e0.getElementsByTag("version").get(0);
-                local_version = Double.parseDouble(e1.text());
-            }
-        } catch (NumberFormatException e) {
-            e.printStackTrace();
-        }
+        File file = new File(PARENT, "project/mirai-bot-first-master/classpath/update.json");
+        JSONObject jo = JSON.parseObject(FileUtils.getStringFromFile(file.getAbsolutePath()));
+        local_version = jo.getDouble("version");
     }
 
     /**
