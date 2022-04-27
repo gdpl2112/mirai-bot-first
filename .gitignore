@@ -1,7 +1,6 @@
 ### Java template
 # Compiled class file
 game-installer/space
-classpath
 base/*
 Libs/dates/History/*
 Libs/records
