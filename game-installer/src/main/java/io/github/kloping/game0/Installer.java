@@ -2,17 +2,16 @@ package io.github.kloping.game0;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
+import io.github.kloping.common.Public;
 import io.github.kloping.file.FileUtils;
+import io.github.kloping.io.ReadUtils;
 import io.github.kloping.url.UrlUtils;
 import org.apache.log4j.Logger;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
 import java.net.URL;
 
 /**
@@ -20,6 +19,10 @@ import java.net.URL;
  */
 public class Installer {
     public static Double local_version = 0.0;
+
+    private static final boolean IS_WIN = System.getProperty("os.name").toLowerCase().contains("win");
+    private static final boolean IS_LINUX = System.getProperty("os.name").toLowerCase().indexOf("linux") >= 0;
+
 
     public static void main(String[] args) {
         loadLocal();
@@ -29,15 +32,73 @@ public class Installer {
     private static void load() {
         JSONObject jo = JSON.parseObject(UrlUtils.getStringFromHttpUrl("https://gitee.com/kloping/mirai-bot-first/raw/master/classpath/update.json"));
         if (local_version < jo.getDouble("version")) {
-            update(jo.getString("url"),jo.getInteger("size"));
+            update(jo.getString("url"), jo.getInteger("size"));
         }
         start();
     }
 
     private static void start() {
+        String sc = getStartCmd();
+        File file = null;
+        if (IS_WIN) {
+            file = new File(PARENT, "start.bat");
+        } else {
+            file = new File(PARENT, "start.sh");
+        }
+        if (!file.exists())
+            FileUtils.putStringInFile(sc, file);
+        callAndOut(file);
     }
 
-    private static void update(String url,int max) {
+    private static String getStartCmd() {
+        File f0 = new File(PARENT, "project/mirai-bot-first-master");
+        File f1 = new File(PARENT, "project/mirai-bot-first-master/classpath");
+        StringBuilder sb = new StringBuilder();
+        if (IS_WIN) {
+            sb.append("@echo off").append("\n")
+                    .append("set java=%JAVA_HOME%/bin/java").append("\n")
+                    .append("cd ").append(f0.getAbsolutePath()).append("\n")
+                    .append("%java% -Dfile.encoding=UTF-8 -classpath ").append(f1.getAbsolutePath()).append("/*")
+                    .append(" io.github.kloping.mirai0.Main.BotStarter").append("\n").append("pause");
+        } else {
+            sb.append("java=%JAVA_HOME%").append("\n")
+                    .append("cd ").append(f0.getAbsolutePath()).append("\n")
+                    .append("%java% -Dfile.encoding=UTF-8 -classpath ").append(f1.getAbsolutePath()).append("/*")
+                    .append(" io.github.kloping.mirai0.Main.BotStarter");
+        }
+        return sb.toString();
+    }
+
+    private static void callAndOut(File file) {
+        try {
+            Runtime runtime = Runtime.getRuntime();
+//            print(runtime.exec(new String[]{"cd", PARENT.getAbsolutePath()}));
+//            print(runtime.exec(new String[]{"chdir"}));
+            Process p0 = runtime.exec(file.getAbsolutePath());
+            InputStream es = p0.getErrorStream();
+            InputStream is = p0.getInputStream();
+            out(es);
+            out(is);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private static void out(InputStream is) {
+        Public.EXECUTOR_SERVICE.submit(() -> {
+            try {
+                BufferedReader reader = new BufferedReader(new InputStreamReader(is));
+                String line = null;
+                while ((line = reader.readLine()) != null) {
+                    System.out.println(line);
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
+    }
+
+    private static void update(String url, int max) {
         try {
             getLogger().info("start update");
             File file = new File(PARENT, "all.zip");
@@ -127,5 +188,18 @@ public class Installer {
 
     public static final Logger getLogger() {
         return Logger.getLogger(Installer.class);
+    }
+
+    public static String[] print(Process exec) throws IOException {
+        try {
+            exec.waitFor();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        InputStream is = exec.getInputStream();
+        String s1 = new String(ReadUtils.readAll(is));
+        InputStream es = exec.getErrorStream();
+        String s2 = new String(ReadUtils.readAll(es));
+        return new String[]{s1, s2};
     }
 }
