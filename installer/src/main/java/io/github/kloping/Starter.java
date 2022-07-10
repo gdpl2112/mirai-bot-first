@@ -62,6 +62,7 @@ public class Starter {
         }
         sb.append(f0.getAbsolutePath());
         List<String> execArgs = new ArrayList<>();
+        System.out.println("正在启动....");
         String javaBin = System.getProperties().getProperty("java.home") + "/bin/java";
         execArgs.add(javaBin);
         execArgs.add("-Dfile.encoding=UTF-8");
@@ -69,7 +70,6 @@ public class Starter {
         execArgs.add(sb.toString());
         execArgs.add("io.github.kloping.mirai0.Main.BotStarter");
         execArgs.add(code);
-        System.out.println("正在启动....");
         process = Runtime.getRuntime().exec(execArgs.toArray(new String[0]));
         outE(process.getErrorStream());
         out(process.getInputStream());
