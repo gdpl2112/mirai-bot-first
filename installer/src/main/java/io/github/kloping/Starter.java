@@ -45,10 +45,10 @@ public class Starter {
             System.out.println("请输入授权码");
             code = SC.nextLine().trim();
         }
-        File[] jarFiles = getJars();
-        copyDefaultConfig();
         StringBuilder sb = new StringBuilder();
-        for (File jarFile : jarFiles) sb.append(jarFile.getAbsolutePath()).append(";");
+        sb.append(getJarsLine()).append(";");
+        copyDefaultConfig();
+
         f0 = createTempFileByUrl(getMainJar(code));
         if (f0 != null) {
             deleteUp();
@@ -161,19 +161,15 @@ public class Starter {
         }
     }
 
-    private static File[] getJars() {
-        File file = new File(DIR, "start.libs");
-        List<File> files = new ArrayList<>();
+    private static String getJarsLine() {
+        File file = new File(DIR, "commandLine/start.libs.line");
         try {
-            String[] ss = reads(file.getAbsolutePath());
             String mrp = System.getProperties().get("user.home") + "/.m2/repository";
-            for (String s : ss) {
-                String s0 = s.replace("%mrp%", mrp);
-                files.add(new File(s0));
-            }
+            String line0 = readAllAsString(new FileInputStream(file));
+            return line0.trim().replaceAll("%mrp%", mrp);
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return files.toArray(new File[0]);
+        return null;
     }
 }
