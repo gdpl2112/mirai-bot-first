@@ -67,7 +67,6 @@ public class Starter {
         execArgs.add("-Dfile.encoding=UTF-8");
         execArgs.add("-classpath");
         execArgs.add(sb.toString());
-        System.out.println(sb.toString());
         execArgs.add("io.github.kloping.mirai0.Main.BotStarter");
         execArgs.add(code);
         System.out.println("正在启动....");
