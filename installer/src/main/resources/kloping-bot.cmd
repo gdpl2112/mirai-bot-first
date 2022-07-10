@@ -51,6 +51,8 @@ if not exist %dir% (
     echo "pull"
     call cd ./mirai-bot-first
     call git pull origin master
+    call git fetch --all
+    call git reset --hard origin/master
     call cd ../
 )
 
