@@ -1,0 +1,6 @@
+Illegal.txt=淦 草 艹
+Illegal.send=艹 草
+superQL=3474006766,
+bot.myName=0号
+bot.protocol=ANDROID_PHONE
+env.test=false

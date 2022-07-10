@@ -1,0 +1,11 @@
+->com.github.kloping.iwanna.buy.impl.simple.ConfCommodity
+	owner: -1
+	nowPrice: 3000
+	size: 2
+	originalPrice: 3000
+	src: ""
+	id: 1
+	time: -1
+	sid: 0
+	name: "三星手机"
+

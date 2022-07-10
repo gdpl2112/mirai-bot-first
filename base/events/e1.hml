@@ -1,0 +1,9 @@
+->com.github.kloping.iwanna.buy.impl.simple.ConfEvent
+	changes: ->java.util.HashMap
+		0: ->io.github.kloping.serialize.HMLObject$Entry0
+			kName: "java.lang.Integer"
+			vName: "java.lang.Integer"
+			k: 2
+			v: 2
+	id: 2
+	desc: "昨日医院传出消息一名患者自从吃转基因豆,身体逐渐恢复,转基因豆价格提升"

@@ -1,0 +1,59 @@
+### Java template
+# Compiled class file
+game-installer/space
+base/*
+Libs/dates/History/*
+Libs/records
+Libs/customRandReply
+Libs/dates/users/*
+Libs/dates/mainfist/*
+Libs/dates/games/dates/*
+Libs/dates/games/skills/*
+Libs/dates/games/tasks
+Libs/dates/mainfist/groups/*
+records
+conf/Landlord
+Kt-native
+cache1
+temp
+bots
+plugin-starter
+Test-Temp
+conf/bots.conf.json
+conf/conf.txt
+cache
+data
+devices
+logs
+config
+**/.git_
+*.class
+# Log file
+*.log
+# BlueJ files
+*.ctxt
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+# Package Files #
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+hs_err_pid*
+
+### Example user template template
+### Example user template
+
+# IntelliJ project files
+.idea
+*.iml
+out
+gen
+**/test
+superQList.txt
+target
