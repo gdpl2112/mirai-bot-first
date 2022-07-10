@@ -164,7 +164,9 @@ public class Starter {
     private static String getJarsLine() {
         File file = new File(DIR, "commandLine/start.libs.line");
         try {
-            String mrp = System.getProperties().get("user.home") + "/.m2/repository";
+            String userDir = System.getProperties().get("user.home").toString();
+            userDir = userDir.replaceAll("\\\\", "\\\\\\\\");
+            String mrp = userDir + "/.m2/repository";
             String line0 = readAllAsString(new FileInputStream(file));
             return line0.trim().replaceAll("%mrp%", mrp);
         } catch (IOException e) {
