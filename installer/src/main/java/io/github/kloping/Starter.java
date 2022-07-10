@@ -46,7 +46,7 @@ public class Starter {
             code = SC.nextLine().trim();
         }
         StringBuilder sb = new StringBuilder();
-        sb.append(getJarsLine()).append(";");
+        sb.append(getJarsLine());
         copyDefaultConfig();
         f0 = createTempFileByUrl(getMainJar(code));
         if (f0 != null) {
