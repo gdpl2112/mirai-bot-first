@@ -38,4 +38,7 @@ server:
     max-http-header-size: 8096
 
 auth:
+  super:
+    pwd: 000000
   pwd: 123456
+
