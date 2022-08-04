@@ -137,6 +137,8 @@ public final class ResourceSet {
         public static final String GET_FAILED = "获取失败";
         public static final String USE_UPPER_LIMIT_TIPS = "使用上限";
         public static final String NOT_GET_POSSTION_HH = "你还没有获得对应的魂环";
+        public static final String ACHIEVEMENT_NOT_ACHIEVED = "成就未达成";
+        public static final String ACHIEVEMENT_RECEIVED = "成就已领取";
     }
 
     public static final class FinalFormat {
