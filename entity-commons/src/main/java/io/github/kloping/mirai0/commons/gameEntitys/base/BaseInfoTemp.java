@@ -9,9 +9,22 @@ import java.util.concurrent.Future;
  * @version 1.0
  */
 public class BaseInfoTemp {
+    /**
+     * k 被 眩晕到 v 时间戳
+     */
     public static final Map<Long, Long> VERTIGO_T0 = new HashMap<>();
-    private static final Map<Long, Future> VERTIGO_T1 = new HashMap<>();
+    /**
+     * k 的
+     */
+    public static final Map<Long, Future> VERTIGO_T1 = new HashMap<>();
+    /**
+     * k 直到 v 可使用 魂技
+     */
     private static final Map<Long, Long> CANT_VERTIGO = new HashMap<>();
+    /**
+     * k 被 v 攻击
+     */
+    public static final Map<Long, Long> VERTIGO_T2 = new HashMap<>();
 
     public synchronized static boolean letVertigo(long q, long t) {
         if (!CANT_VERTIGO.containsKey(q) || System.currentTimeMillis() > CANT_VERTIGO.get(q))
@@ -25,12 +38,19 @@ public class BaseInfoTemp {
     }
 
     public synchronized static void append(long q, Future future, boolean breakOld) {
+        append(q, future, breakOld, 0);
+    }
+
+    public synchronized static void append(long q, Future future, boolean breakOld, long q2) {
         if (breakOld) {
             if (VERTIGO_T1.containsKey(q)) {
                 VERTIGO_T1.get(q).cancel(true);
             }
         }
         VERTIGO_T1.put(q, future);
+        if (q2 != 0) {
+            VERTIGO_T2.put(q2, q);
+        }
     }
 
     private static void refresh() {
