@@ -192,15 +192,14 @@
             <scope>system</scope>
             <systemPath>${project.basedir}/entity-commons/src/main/resources/entity-commons.jar</systemPath>
         </dependency>
-<!--        <dependency>-->
-<!--            <groupId>io.github.kloping</groupId>-->
-<!--            <artifactId>myqq-connect-module</artifactId>-->
-<!--            <version>1.0</version>-->
-<!--            <scope>system</scope>-->
-<!--            <systemPath>${project.basedir}/myqq-connect-module/out/myqq-connect-module.jar</systemPath>-->
-<!--        </dependency>-->
+        <!--        <dependency>-->
+        <!--            <groupId>io.github.kloping</groupId>-->
+        <!--            <artifactId>myqq-connect-module</artifactId>-->
+        <!--            <version>1.0</version>-->
+        <!--            <scope>system</scope>-->
+        <!--            <systemPath>${project.basedir}/myqq-connect-module/out/myqq-connect-module.jar</systemPath>-->
+        <!--        </dependency>-->
     </dependencies>
-
     <build>
         <plugins>
             <plugin>
