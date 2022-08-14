@@ -1,5 +1,8 @@
 package io.github.kloping;
 
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+
 import java.io.*;
 import java.net.URL;
 import java.util.ArrayList;
@@ -153,7 +156,9 @@ public class Starter {
 
     public static URL getMainJar(String code) {
         try {
-            String fileName = readAllAsString(openUrl(HOST + "/verify1?code=" + code));
+            Document document = Jsoup.connect(HOST + "/verify1?code=af39551b-b957-471f-8a6f-e033fd14cc6c").ignoreHttpErrors(true)
+                    .ignoreContentType(true).get();
+            String fileName = document.body().text();
             return new URL(HOST + "/" + fileName);
         } catch (Throwable e) {
             return null;
