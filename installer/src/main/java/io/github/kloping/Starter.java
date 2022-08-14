@@ -120,6 +120,7 @@ public class Starter {
             String fileName = new String(bytes, "utf-8").trim();
             return new URL(HOST + "/" + fileName);
         } catch (Throwable e) {
+            e.printStackTrace();
             return null;
         }
     }
