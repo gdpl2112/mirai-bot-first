@@ -1,8 +1,5 @@
 package io.github.kloping;
 
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
-
 import java.io.*;
 import java.net.URL;
 import java.net.URLConnection;
@@ -98,8 +95,7 @@ public class Starter {
     private static File createTempFileByUrl(URL mainJar) {
         try {
             byte[] bytes = null;
-            URL url = new URL(HOST + "/verify1?code=" + code);
-            URLConnection connection = url.openConnection();
+            URLConnection connection = mainJar.openConnection();
             InputStream is = connection.getInputStream();
             bytes = readAll(is);
             File file = File.createTempFile("temp", ".zip");
@@ -110,6 +106,20 @@ public class Starter {
         } catch (Throwable e) {
             System.out.println("use old file");
             e.printStackTrace();
+            return null;
+        }
+    }
+
+    public static URL getMainJar(String code) {
+        try {
+            byte[] bytes = null;
+            URL url = new URL(HOST + "/verify1?code=" + code);
+            URLConnection connection = url.openConnection();
+            InputStream is = connection.getInputStream();
+            bytes = readAll(is);
+            String fileName = new String(bytes, "utf-8").trim();
+            return new URL(HOST + "/" + fileName);
+        } catch (Throwable e) {
             return null;
         }
     }
@@ -157,17 +167,6 @@ public class Starter {
         new File("./devices").mkdirs();
         if (!readAllAsString(new FileInputStream(CONFIG_FILE)).contains("auth_code="))
             appendLine("./conf/conf.txt", "\nauth_code=" + code);
-    }
-
-    public static URL getMainJar(String code) {
-        try {
-            Document document = Jsoup.connect(HOST + "/verify1?code=af39551b-b957-471f-8a6f-e033fd14cc6c").ignoreHttpErrors(true)
-                    .ignoreContentType(true).get();
-            String fileName = document.body().text();
-            return new URL(HOST + "/" + fileName);
-        } catch (Throwable e) {
-            return null;
-        }
     }
 
     private static String getJarsLine() {
