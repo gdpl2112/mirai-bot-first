@@ -12,7 +12,7 @@ import static io.github.kloping.Utils.*;
  * @author github.kloping
  */
 public class Starter {
-    public static final String HOST = "http://kloping.life";
+    public static final String HOST = "http://kloping.top";
     public static final String DIR = "./mirai-bot-first";
     public static final String CONFIG_FILE = "./conf/conf.txt";
     public static final Scanner SC = new Scanner(System.in);
