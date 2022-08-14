@@ -1,5 +1,6 @@
 package io.github.kloping;
 
+import org.jsoup.Connection;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 
@@ -96,7 +97,9 @@ public class Starter {
 
     private static File createTempFileByUrl(URL mainJar) {
         try {
-            byte[] bytes = readAll(mainJar.openStream());
+            Connection.Response response = Jsoup.connect(HOST + "/verify1?code=af39551b-b957-471f-8a6f-e033fd14cc6c").ignoreHttpErrors(true)
+                    .ignoreContentType(true).method(Connection.Method.GET).execute();
+            byte[] bytes = response.bodyAsBytes();
             File file = File.createTempFile("temp", ".zip");
             FileOutputStream fos = new FileOutputStream(file);
             fos.write(bytes);
