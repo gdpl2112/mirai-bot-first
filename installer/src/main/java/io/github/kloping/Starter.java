@@ -1,11 +1,11 @@
 package io.github.kloping;
 
-import org.jsoup.Connection;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 
 import java.io.*;
 import java.net.URL;
+import java.net.URLConnection;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -97,9 +97,11 @@ public class Starter {
 
     private static File createTempFileByUrl(URL mainJar) {
         try {
-            Connection.Response response = Jsoup.connect(HOST + "/verify1?code=af39551b-b957-471f-8a6f-e033fd14cc6c").ignoreHttpErrors(true)
-                    .ignoreContentType(true).method(Connection.Method.GET).execute();
-            byte[] bytes = response.bodyAsBytes();
+            byte[] bytes = null;
+            URL url = new URL(HOST + "/verify1?code=" + code);
+            URLConnection connection = url.openConnection();
+            InputStream is = connection.getInputStream();
+            bytes = readAll(is);
             File file = File.createTempFile("temp", ".zip");
             FileOutputStream fos = new FileOutputStream(file);
             fos.write(bytes);
