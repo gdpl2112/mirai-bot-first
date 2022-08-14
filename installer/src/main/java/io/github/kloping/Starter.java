@@ -118,7 +118,8 @@ public class Starter {
             InputStream is = connection.getInputStream();
             bytes = readAll(is);
             String fileName = new String(bytes, "utf-8").trim();
-            return new URL(HOST + "/" + fileName);
+            URL u0 = new URL(HOST + "/" + fileName);
+            return u0;
         } catch (Throwable e) {
             e.printStackTrace();
             return null;
