@@ -27,6 +27,12 @@
         </repository>
     </repositories>
     <dependencies>
+        <!--FTP包-->
+        <dependency>
+            <groupId>commons-net</groupId>
+            <artifactId>commons-net</artifactId>
+            <version>3.5</version>
+        </dependency>
         <dependency>
             <groupId>io.github.kloping</groupId>
             <artifactId>IWannaBuy</artifactId>
