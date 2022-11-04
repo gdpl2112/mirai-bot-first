@@ -17,10 +17,8 @@
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
-
         <kotlin.version>1.6.0-RC</kotlin.version>
-        <mirai-version>2.10.0</mirai-version>
-
+        <mirai-version>2.12.0</mirai-version>
     </properties>
 
     <dependencies>
@@ -33,7 +31,7 @@
         <dependency>
             <groupId>io.github.Kloping</groupId>
             <artifactId>SpringTool</artifactId>
-            <version>0.5.2</version>
+            <version>0.5.5</version>
         </dependency>
         <dependency>
             <groupId>io.github.Kloping</groupId>
@@ -44,7 +42,7 @@
         <dependency>
             <groupId>io.github.Kloping</groupId>
             <artifactId>JvUtils</artifactId>
-            <version>0.4.2</version>
+            <version>0.4.6</version>
         </dependency>
         <!--生成验证图片的框架-->
         <dependency>
@@ -112,7 +110,7 @@
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
-            <version>1.2.73</version>
+            <version>1.2.78</version>
         </dependency>
         <!--gson-->
         <dependency>
