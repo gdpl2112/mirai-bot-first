@@ -222,7 +222,7 @@ public final class ResourceSet {
         /**
          * 闭关冷却
          */
-        public static final long BG_CD = 1000 * 60 * 60L;
+        public static final long BG_CD = 1000 * 60 * 30L;
         /**
          * 最大等级
          */
