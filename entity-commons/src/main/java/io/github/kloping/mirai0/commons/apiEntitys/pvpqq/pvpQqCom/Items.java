@@ -1,4 +1,4 @@
-package io.github.kloping.mirai0.commons.apiEntitys.pvpQqCom;
+package io.github.kloping.mirai0.commons.apiEntitys.pvpqq.pvpQqCom;
 
 public class Items {
     private String sTvideoFileSize;

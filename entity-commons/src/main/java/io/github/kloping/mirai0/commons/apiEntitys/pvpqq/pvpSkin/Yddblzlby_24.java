@@ -1,4 +1,4 @@
-package io.github.kloping.mirai0.commons.apiEntitys.pvpSkin;
+package io.github.kloping.mirai0.commons.apiEntitys.pvpqq.pvpSkin;
 
 public class Yddblzlby_24 {
     private String yddblzjbxqydz_d7;

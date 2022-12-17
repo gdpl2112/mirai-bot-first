@@ -1,4 +1,4 @@
-package io.github.kloping.mirai0.commons.apiEntitys.pvpSkin;
+package io.github.kloping.mirai0.commons.apiEntitys.pvpqq.pvpSkin;
 
 public class Pcblzlby_c6 {
     private String yxbllx_c2;

@@ -1,4 +1,4 @@
-package io.github.kloping.mirai0.commons.apiEntitys.pvpQqCom.v1;
+package io.github.kloping.mirai0.commons.apiEntitys.pvpqq.pvpQqCom.v1;
 
 public class Msg {
     private String iVideoTotal;
