@@ -50,7 +50,7 @@
         <dependency>
             <groupId>io.github.Kloping</groupId>
             <artifactId>JvUtils</artifactId>
-            <version>0.4.6</version>
+            <version>0.4.7</version>
         </dependency>
         <!--生成验证图片的框架-->
         <dependency>
@@ -204,6 +204,12 @@
             <groupId>org.bytedeco</groupId>
             <artifactId>javacv-platform</artifactId>
             <version>1.5</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.github.gdpl2112</groupId>
+            <artifactId>KlopLocalityDataBase</artifactId>
+            <version>1.4</version>
         </dependency>
     </dependencies>
     <build>

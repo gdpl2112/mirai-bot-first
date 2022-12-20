@@ -1,6 +1,7 @@
 ### Java template
 # Compiled class file
 game-installer/space
+conf/forbiddenWord
 base/*
 Libs/dates/History/*
 Libs/records

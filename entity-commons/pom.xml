@@ -27,13 +27,13 @@
         <dependency>
             <groupId>io.github.Kloping</groupId>
             <artifactId>SpringTool</artifactId>
-            <version>0.5.5</version>
+            <version>0.5.7</version>
         </dependency>
         <!--自制工具-->
         <dependency>
             <groupId>io.github.Kloping</groupId>
             <artifactId>JvUtils</artifactId>
-            <version>0.4.6</version>
+            <version>0.4.7</version>
         </dependency>
         <!--mybatis springboot-->
         <dependency>
