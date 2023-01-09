@@ -13,7 +13,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.6.0</version>
+        <version>2.7.7</version>
         <relativePath/>
     </parent>
     <repositories>
@@ -23,8 +23,7 @@
         </repository>
     </repositories>
     <properties>
-        <kotlin.version>1.6.0</kotlin.version>
-        <mirai-version>2.12.3</mirai-version>
+        <mirai-version>2.13.2</mirai-version>
     </properties>
     <dependencies>
         <!--FTP包-->
@@ -115,11 +114,11 @@
             <version>0.9.11</version>
         </dependency>
         <!--fastjson-->
-        <!--        <dependency>-->
-        <!--            <groupId>com.alibaba</groupId>-->
-        <!--            <artifactId>fastjson</artifactId>-->
-        <!--            <version>1.2.73</version>-->
-        <!--        </dependency>-->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.73</version>
+        </dependency>
         <!--gson-->
         <dependency>
             <groupId>com.google.code.gson</groupId>
@@ -205,7 +204,6 @@
             <artifactId>javacv-platform</artifactId>
             <version>1.5</version>
         </dependency>
-
         <dependency>
             <groupId>io.github.gdpl2112</groupId>
             <artifactId>KlopLocalityDataBase</artifactId>
