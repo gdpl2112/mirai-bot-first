@@ -7,7 +7,9 @@ import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 
 import java.lang.reflect.Field;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -23,6 +25,7 @@ import java.util.Map;
 public class SoulAttribute {
     public static final Map<String, Field> MAP = new HashMap<>();
     public static final Map<String, String> MAP0 = new HashMap<>();
+    public static final List<Integer> SKILLS = new ArrayList<>();
 
     static {
         for (Field declaredField : SoulAttribute.class.getDeclaredFields()) {
@@ -34,6 +37,8 @@ public class SoulAttribute {
         MAP0.put("hlp", "hlChance");
         MAP0.put("hpe", "hpEffect");
         MAP0.put("hle", "hlEffect");
+        SKILLS.add(1514);
+        SKILLS.add(1515);
     }
 
     @TableId

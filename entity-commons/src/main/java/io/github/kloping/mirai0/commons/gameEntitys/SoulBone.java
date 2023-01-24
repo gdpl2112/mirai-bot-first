@@ -38,4 +38,8 @@ public class SoulBone {
     public int partId() {
         return Integer.parseInt(oid.toString().substring(0, 3));
     }
+
+    public boolean hasSkill() {
+        return SoulAttribute.SKILLS.contains(getOid().intValue());
+    }
 }
