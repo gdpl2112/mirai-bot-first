@@ -20,4 +20,5 @@ public class Zon {
     private Integer level = 0;
     private Integer times = 0;
     private Integer xper = 0;
+    private Integer active = 0;
 }
