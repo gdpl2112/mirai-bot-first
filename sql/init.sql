@@ -554,11 +554,12 @@ CREATE TABLE IF NOT EXISTS `warp`
 -- 导出  表 mydb1.zon 结构
 CREATE TABLE IF NOT EXISTS `zon`
 (
-    `id`    int(9)     NOT NULL,
-    `qq`    bigint(18) NOT NULL,
-    `level` int(9)     NOT NULL,
-    `times` int(9)     NOT NULL,
-    `xper`  int(9)     NOT NULL,
+    `id`     int(9)     NOT NULL,
+    `qq`     bigint(18) NOT NULL,
+    `level`  int(9)     NOT NULL,
+    `times`  int(9)     NOT NULL,
+    `xper`   int(9)     NOT NULL,
+    `active` int(9)     NOT NULL,
     UNIQUE KEY `qq` (`qq`)
 ) ENGINE = InnoDB
   DEFAULT CHARSET = utf8;
@@ -588,6 +589,7 @@ CREATE TABLE IF NOT EXISTS `zong`
     `gold`      bigint(18)   NOT NULL,
     `mk`        bigint(18)   NOT NULL,
     `pub`       int(9)       NOT NULL,
+    `active`    int(9)       NOT NULL,
     UNIQUE KEY `id` (`id`)
 ) ENGINE = InnoDB
   DEFAULT CHARSET = utf8;
