@@ -164,7 +164,7 @@ public class Starter {
         copy(DIR + "/conf/conf_template.txt", "./conf/conf.txt", false);
         copy(DIR + "/application.yml", "./application.yml", false);
         copy(DIR + "/superQList.txt", "./superQList.txt", false);
-        copyPlus(DIR + "/spring", "./", false);
+//        copyPlus(DIR + "/spring", "./", false);
         copyPlus(DIR + "/images", "./", true);
         new File("./devices").mkdirs();
         if (!readAllAsString(new FileInputStream(CONFIG_FILE)).contains("auth_code="))
