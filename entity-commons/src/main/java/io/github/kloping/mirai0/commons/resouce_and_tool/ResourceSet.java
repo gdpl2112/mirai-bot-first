@@ -206,7 +206,7 @@ public final class ResourceSet {
         /**
          * 攻击冷却
          */
-        public static final int ATT_CD = 10000;
+        public static final int ATT_CD = 6000;
         /**
          * 攻击前摇
          */
