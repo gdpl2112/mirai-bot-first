@@ -67,6 +67,7 @@ public class Utils {
      */
     public static void copyPlus(String src, String target, boolean override) {
         File file = new File(src);
+        if (!file.exists()) return;
         File endfile = new File(target + "\\\\" + file.getName());
         endfile.mkdirs();
         for (File f : file.listFiles()) {
@@ -87,6 +88,7 @@ public class Utils {
      */
     public static void copy(String src, String target, boolean override) {
         if (!override && new File(target).exists()) return;
+        if (!new File(src).exists()) return;
         BufferedInputStream dis = null;
         BufferedOutputStream dos = null;
         try {
