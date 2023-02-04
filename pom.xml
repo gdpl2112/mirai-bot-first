@@ -23,7 +23,7 @@
         </repository>
     </repositories>
     <properties>
-        <mirai-version>2.13.4</mirai-version>
+        <mirai-version>2.14.0-RC</mirai-version>
     </properties>
     <dependencies>
         <!--FTP包-->
