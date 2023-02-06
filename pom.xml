@@ -26,6 +26,12 @@
         <mirai-version>2.14.0-RC</mirai-version>
     </properties>
     <dependencies>
+        <!--velocity-->
+        <dependency>
+            <groupId>org.apache.velocity</groupId>
+            <artifactId>velocity</artifactId>
+            <version>1.7</version>
+        </dependency>
         <!--FTP包-->
         <dependency>
             <groupId>commons-net</groupId>
@@ -190,8 +196,8 @@
             <groupId>io.github.kloping</groupId>
             <artifactId>entity-commons</artifactId>
             <version>1.0</version>
-            <scope>system</scope>
-            <systemPath>${project.basedir}/entity-commons/src/main/resources/entity-commons.jar</systemPath>
+<!--            <scope>system</scope>-->
+<!--            <systemPath>${project.basedir}/entity-commons/src/main/resources/entity-commons.jar</systemPath>-->
         </dependency>
         <dependency>
             <groupId>log4j</groupId>

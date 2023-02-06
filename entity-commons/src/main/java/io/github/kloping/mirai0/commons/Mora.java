@@ -3,8 +3,12 @@ package io.github.kloping.mirai0.commons;
 
 import static io.github.kloping.mirai0.commons.resouce_and_tool.CommonSource.RANDOM;
 
+/**
+ * @author HRS-Computer
+ */
+
 public enum Mora {
-    a("石头"), b("剪刀"), c("布");
+    A("石头"), B("剪刀"), C("布");
 
     private final String value_;
 
@@ -13,12 +17,12 @@ public enum Mora {
     }
 
     public static Mora findMora(String s, int i) {
-        if (s.substring(i).contains(a.value_))
-            return a;
-        else if (s.substring(i).contains(b.value_))
-            return b;
-        else if (s.substring(i).contains(c.value_))
-            return c;
+        if (s.substring(i).contains(A.value_))
+            return A;
+        else if (s.substring(i).contains(B.value_))
+            return B;
+        else if (s.substring(i).contains(C.value_))
+            return C;
         else
             return null;
     }
@@ -27,11 +31,11 @@ public enum Mora {
         int i = RANDOM.nextInt(3);
         switch (i) {
             case 0:
-                return a;
+                return A;
             case 1:
-                return b;
+                return B;
             default:
-                return c;
+                return C;
         }
     }
 
@@ -58,7 +62,7 @@ public enum Mora {
         int i2 = 0;
         int i3 = 0;
         while (i++ < 10000)
-            switch (getRc(10, 40, a).getValue()) {
+            switch (getRc(10, 40, A).getValue()) {
                 case "石头":
                     i1++;
                     continue;
@@ -71,31 +75,31 @@ public enum Mora {
                 default:
                     continue;
             }
-        System.out.println(a.getValue() + ":\t" + i1);
-        System.out.println(b.getValue() + ":\t" + i2);
-        System.out.println(c.getValue() + ":\t\t" + i3);
+        System.out.println(A.getValue() + ":\t" + i1);
+        System.out.println(B.getValue() + ":\t" + i2);
+        System.out.println(C.getValue() + ":\t\t" + i3);
     }
 
     public static Mora getLost(Mora mora) {
         switch (mora) {
-            case a:
-                return c;
-            case b:
-                return a;
-            case c:
-                return b;
+            case A:
+                return C;
+            case B:
+                return A;
+            case C:
+                return B;
         }
         return null;
     }
 
     public static Mora getWin(Mora mora) {
         switch (mora) {
-            case a:
-                return b;
-            case b:
-                return c;
-            case c:
-                return a;
+            case A:
+                return B;
+            case B:
+                return C;
+            case C:
+                return A;
         }
         return null;
     }

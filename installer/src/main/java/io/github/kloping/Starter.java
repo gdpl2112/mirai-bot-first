@@ -74,8 +74,7 @@ public class Starter {
         process = Runtime.getRuntime().exec(execArgs.toArray(new String[0]));
         outE(process.getErrorStream());
         out(process.getInputStream());
-        if (FILE_PID.exists())
-            FILE_PID.delete();
+        if (FILE_PID.exists()) FILE_PID.delete();
         write(FILE_PID.getAbsolutePath(), String.valueOf(process.pid()));
     }
 

@@ -76,8 +76,8 @@ public final class ResourceSet {
         public static final String NOT_MANAGER = "权限不足#不是管理";
         public static final String PERMISSION_DENIED = "权限不足";
         public static final String HTTPS_PRE = "https:";
-        public static final String TRANSFER_TOO_MUCH = "转让物品一次不要超过20个";
-        public static final String SLE_TOO_MUCH = "出售物品一次不要超过20个";
+        public static final String ASYNCHRONOUS_TRANSFER = "异步转让中...";
+        public static final String ASYNCHRONOUS_SLE = "异步出售中...";
 
         public static final String MONTH = "月";
         public static final String DAY = "天";
@@ -133,12 +133,13 @@ public final class ResourceSet {
         public static final String SKILL_BREAK = "技能被打断";
         public static final String BG_TIPS = "闭关中..";
         public static final String PLAYER_BG_TIPS = "玩家正在闭关中...";
-        public static final String FUNCTION_CLOSEING_TIPS = "功能暂时关闭";
+        public static final String FUNCTION_CLOSED_TIPS = "功能暂时关闭";
         public static final String GET_FAILED = "获取失败";
         public static final String USE_UPPER_LIMIT_TIPS = "使用上限";
-        public static final String NOT_GET_POSSTION_HH = "你还没有获得对应的魂环";
+        public static final String NOT_GET_LOCATION_HH = "你还没有获得对应的魂环";
         public static final String ACHIEVEMENT_NOT_ACHIEVED = "成就未达成";
         public static final String ACHIEVEMENT_RECEIVED = "成就已领取";
+        public static final String ACCOUNT_LOCKED = "账户锁定中...\r\n退出客户端登录后重试";
     }
 
     public static final class FinalFormat {
