@@ -7,9 +7,6 @@
     <artifactId>mirai-frist</artifactId>
     <packaging>pom</packaging>
     <version>1.0</version>
-    <modules>
-        <module>entity-commons</module>
-    </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
@@ -23,8 +20,171 @@
         </repository>
     </repositories>
     <properties>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+        <maven.compiler.compilerVersion>11</maven.compiler.compilerVersion>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <mirai-version>2.14.0-RC</mirai-version>
     </properties>
+    <dependencyManagement>
+        <dependencies>
+            <!--velocity-->
+            <dependency>
+                <groupId>org.apache.velocity</groupId>
+                <artifactId>velocity</artifactId>
+                <version>1.7</version>
+            </dependency>
+            <!--FTP包-->
+            <dependency>
+                <groupId>commons-net</groupId>
+                <artifactId>commons-net</artifactId>
+                <version>3.5</version>
+            </dependency>
+            <!--自制框架-->
+            <dependency>
+                <groupId>io.github.Kloping</groupId>
+                <artifactId>SpringTool</artifactId>
+                <version>0.5.8</version>
+            </dependency>
+            <!--自制redis工具-->
+            <dependency>
+                <groupId>io.github.Kloping</groupId>
+                <artifactId>spt-redis</artifactId>
+                <version>0.2.1</version>
+            </dependency>
+            <!--自制工具-->
+            <dependency>
+                <groupId>io.github.Kloping</groupId>
+                <artifactId>JvUtils</artifactId>
+                <version>0.4.7</version>
+            </dependency>
+            <!--生成验证图片的框架-->
+            <dependency>
+                <groupId>com.github.penggle</groupId>
+                <artifactId>kaptcha</artifactId>
+                <version>2.3.2</version>
+            </dependency>
+            <!--拼音支持-->
+            <dependency>
+                <groupId>io.github.wnjustdoit</groupId>
+                <artifactId>pinyin4j</artifactId>
+                <version>2.6.0</version>
+            </dependency>
+            <!--mybatis springboot-->
+            <dependency>
+                <groupId>org.mybatis.spring.boot</groupId>
+                <artifactId>mybatis-spring-boot-starter</artifactId>
+                <version>2.2.0</version>
+            </dependency>
+            <!--mybatis plus springboot-->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <version>3.4.2</version>
+            </dependency>
+            <!--sql数据源驱动-->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid-spring-boot-starter</artifactId>
+                <version>1.2.6</version>
+            </dependency>
+            <!--lambok-->
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>1.18.24</version>
+            </dependency>
+            <!--kotlin支持-->
+            <dependency>
+                <groupId>org.jetbrains.kotlin</groupId>
+                <artifactId>kotlin-stdlib-jdk8</artifactId>
+                <version>${kotlin.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.reflections</groupId>
+                <artifactId>reflections</artifactId>
+                <version>0.9.11</version>
+            </dependency>
+            <!--fastjson-->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>1.2.73</version>
+            </dependency>
+            <!--gson-->
+            <dependency>
+                <groupId>com.google.code.gson</groupId>
+                <artifactId>gson</artifactId>
+                <version>2.9.0</version>
+            </dependency>
+            <!--mirai-->
+            <dependency>
+                <groupId>net.mamoe</groupId>
+                <artifactId>mirai-core-all</artifactId>
+                <version>${mirai-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>net.mamoe</groupId>
+                <artifactId>mirai-core-jvm</artifactId>
+                <version>${mirai-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>net.mamoe</groupId>
+                <artifactId>mirai-console</artifactId>
+                <version>${mirai-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>net.mamoe</groupId>
+                <artifactId>mirai-console-terminal</artifactId>
+                <version>${mirai-version}</version>
+            </dependency>
+            <!--jsoup-->
+            <dependency>
+                <groupId>org.jsoup</groupId>
+                <artifactId>jsoup</artifactId>
+                <version>1.14.2</version>
+            </dependency>
+            <!--netty-->
+            <dependency>
+                <groupId>io.netty</groupId>
+                <artifactId>netty-all</artifactId>
+                <version>4.1.68.Final</version>
+            </dependency>
+            <!--图片处理工具-->
+            <dependency>
+                <groupId>net.coobird</groupId>
+                <artifactId>thumbnailator</artifactId>
+                <version>0.4.14</version>
+            </dependency>
+            <!--gift 动态图处理工具-->
+            <dependency>
+                <groupId>com.madgag</groupId>
+                <artifactId>animated-gif-lib</artifactId>
+                <version>1.2</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.maven.resolver</groupId>
+                <artifactId>maven-resolver-spi</artifactId>
+                <version>1.7.3</version>
+            </dependency>
+            <dependency>
+                <groupId>log4j</groupId>
+                <artifactId>log4j</artifactId>
+                <version>1.2.17</version>
+            </dependency>
+            <dependency>
+                <groupId>org.bytedeco</groupId>
+                <artifactId>javacv-platform</artifactId>
+                <version>1.5</version>
+            </dependency>
+            <dependency>
+                <groupId>io.github.gdpl2112</groupId>
+                <artifactId>KlopLocalityDataBase</artifactId>
+                <version>1.4</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
     <dependencies>
         <!--velocity-->
         <dependency>
@@ -196,8 +356,8 @@
             <groupId>io.github.kloping</groupId>
             <artifactId>entity-commons</artifactId>
             <version>1.0</version>
-<!--            <scope>system</scope>-->
-<!--            <systemPath>${project.basedir}/entity-commons/src/main/resources/entity-commons.jar</systemPath>-->
+            <scope>system</scope>
+            <systemPath>${project.basedir}/entity-commons/src/main/resources/entity-commons.jar</systemPath>
         </dependency>
         <dependency>
             <groupId>log4j</groupId>
