@@ -1,9 +1,0 @@
-->com.github.kloping.iwanna.buy.impl.simple.ConfEvent
-	changes: ->java.util.HashMap
-		0: ->io.github.kloping.serialize.HMLObject$Entry0
-			kName: "java.lang.Integer"
-			vName: "java.lang.Integer"
-			k: 1
-			v: -200
-	id: 1
-	desc: "昨日某一三星手机爆炸,导致三星手机价格直线下滑"

@@ -1,9 +1,0 @@
-->com.github.kloping.iwanna.buy.impl.simple.ConfEvent
-	changes: ->java.util.HashMap
-		0: ->io.github.kloping.serialize.HMLObject$Entry0
-			kName: "java.lang.Integer"
-			vName: "java.lang.Integer"
-			k: 2
-			v: -2
-	id: 3
-	desc: "某市场转基因豆大量发霉,价格变低"
