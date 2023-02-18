@@ -7,26 +7,26 @@ import java.util.Objects;
 /**
  * @author github-kloping
  */
-public class User {
-    public static final Map<Long, User> HIST = new HashMap<>();
+public class SpUser {
+    public static final Map<Long, SpUser> HIST = new HashMap<>();
     private Long id = -1L;
     private Long group = -1L;
     private String nickName = "=";
     private String name = "=";
 
-    public User(Long id, Long group, String nickName, String name) {
+    public SpUser(Long id, Long group, String nickName, String name) {
         this.id = id;
         this.group = group;
         this.nickName = nickName;
         this.name = name;
     }
 
-    public static User create(long id, Long group, String nickName, String name) {
-        if (!HIST.containsKey(id)) HIST.put(id, new User(id, group, nickName, name));
+    public static SpUser create(long id, Long group, String nickName, String name) {
+        if (!HIST.containsKey(id)) HIST.put(id, new SpUser(id, group, nickName, name));
         return HIST.get(id);
     }
 
-    public static User get(Long id) {
+    public static SpUser get(Long id) {
         return HIST.get(id.longValue());
     }
 
@@ -66,7 +66,7 @@ public class User {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        User user = (User) o;
+        SpUser user = (SpUser) o;
         return Objects.equals(id, user.id) && Objects.equals(group, user.group) && Objects.equals(nickName, user.nickName) && Objects.equals(name, user.name);
     }
 

@@ -6,22 +6,22 @@ import java.util.Map;
 /**
  * @author github-kloping
  */
-public class Group {
-    public static Map<Long, Group> upHistGroupMap = new HashMap<>();
+public class SpGroup {
+    public static Map<Long, SpGroup> upHistGroupMap = new HashMap<>();
     private Long id;
     private String nickName;
 
-    public Group() {
+    public SpGroup() {
     }
 
-    private Group(Long id, String nickName) {
+    private SpGroup(Long id, String nickName) {
         this.id = id;
         this.nickName = nickName;
     }
 
-    public static Group create(long id, String name, Map<Long, Group> histGroupMap) {
+    public static SpGroup create(long id, String name, Map<Long, SpGroup> histGroupMap) {
         if (histGroupMap.containsKey(id)) return histGroupMap.get(id);
-        Group group = new Group(id, name);
+        SpGroup group = new SpGroup(id, name);
         histGroupMap.put(
                 id, group
         );
@@ -29,7 +29,7 @@ public class Group {
         return group;
     }
 
-    public static Group get(long id) {
+    public static SpGroup get(long id) {
         if (upHistGroupMap.containsKey(id)) return upHistGroupMap.get(id);
         return null;
     }
