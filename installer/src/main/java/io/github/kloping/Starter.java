@@ -154,7 +154,7 @@ public class Starter {
     }
 
     private static void deleteF0() {
-//        f0.delete();
+        f0.delete();
     }
 
     private static void copyDefaultConfig() throws IOException {
@@ -163,9 +163,7 @@ public class Starter {
         copy(DIR + "/conf/conf_template.txt", "./conf/conf.txt", false);
         copy(DIR + "/application.yml", "./application.yml", false);
         copy(DIR + "/superQList.txt", "./superQList.txt", false);
-//        copyPlus(DIR + "/spring", "./", false);
         copyPlus(DIR + "/images", "./", true);
-        new File("./devices").mkdirs();
         if (!readAllAsString(new FileInputStream(CONFIG_FILE)).contains("auth_code="))
             appendLine("./conf/conf.txt", "\nauth_code=" + code);
     }
