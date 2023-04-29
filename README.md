@@ -79,7 +79,7 @@ env.test=false
 
 Linux 依赖下载
 
-    git clone https://gitee.com/kloping/mirai-bot-first
+    git clone https://github.com/kloping/mirai-bot-first
 
 确保maven已经安装
 
