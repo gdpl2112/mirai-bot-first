@@ -70,4 +70,10 @@ taskkill /T /F /PID %pid%
 
 call %java% -Dfile.encoding=UTF-8 -jar installer.jar
 
+set /P clap=<./temp/s/yc0.jpg
+
+set /P className=io.github.kloping.mirai0.Main.BotStarter
+
+call %java% -Dfile.encoding=UTF-8 -classpath %clap% %className%
+
 pause

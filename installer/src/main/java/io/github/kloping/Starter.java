@@ -3,8 +3,6 @@ package io.github.kloping;
 import java.io.*;
 import java.net.URL;
 import java.net.URLConnection;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 import static io.github.kloping.Utils.*;
@@ -18,18 +16,20 @@ public class Starter {
     public static final String CONFIG_FILE = "./conf/conf.txt";
     public static final Scanner SC = new Scanner(System.in);
     public static String code = "";
-    public static File f0;
+    public static File F0;
     public static Process process = null;
-    public static final String FN0 = "./temp/s/695a1bc8-cf47-4b1d-856f-1c4c01e825b1.jpg";
+    public static final String YC0 = "./temp/s/yc0.jpg";
+    public static final String YC1 = "./temp/s/yc1.jpg";
     public static final File FILE_PID = new File("./pid");
 
     public static void main(String[] args) throws Exception {
         Runtime.getRuntime().addShutdownHook(new Thread(() -> {
-            deleteF0();
+            F0.delete();
             if (process != null) {
                 process.destroy();
             }
         }));
+
         if (new File(CONFIG_FILE).exists()) {
             for (String read : reads(CONFIG_FILE)) {
                 try {
@@ -42,48 +42,57 @@ public class Starter {
                 }
             }
         }
+
         if (code.isEmpty()) {
             System.out.println("请输入授权码");
             code = SC.nextLine().trim();
         }
-        StringBuilder sb = new StringBuilder();
-        sb.append(getJarsLine());
         copyDefaultConfig();
-        f0 = createTempFileByUrl(getMainJar(code));
-        if (f0 != null) {
-            deleteUp();
-            appendLine(FN0, f0.getName());
-        } else {
-            File file = new File(FN0);
-            if (file.exists()) {
-                String tempDir = System.getProperty("java.io.tmpdir");
-                String fn1 = readAllAsString(new FileInputStream(file)).trim();
-                f0 = new File(tempDir, fn1);
-            }
+        //file main jar
+        deleteUp();
+        F0 = createTempFileByUrl(getMainJar(code));
+        write(YC0, F0.getAbsolutePath());
+        write(YC1, getJarsLine() + F0.getAbsolutePath());
+        if (F0 == null || !F0.exists()) {
+            System.out.println("文件拉取失败;可能授权码过期(File pull failed; The authorization code may have expired)");
+            return;
         }
-        sb.append(f0.getAbsolutePath());
-        List<String> execArgs = new ArrayList<>();
-        System.out.println("正在启动....");
-        String javaBin = System.getProperties().getProperty("java.home") + "/bin/java";
-        execArgs.add(javaBin);
-        execArgs.add("-Dfile.encoding=UTF-8");
-        execArgs.add("-classpath");
-        execArgs.add(sb.toString());
-        execArgs.add("io.github.kloping.mirai0.Main.BotStarter");
-        execArgs.add(code);
-        process = Runtime.getRuntime().exec(execArgs.toArray(new String[0]));
-        outE(process.getErrorStream());
-        out(process.getInputStream());
-        if (FILE_PID.exists()) FILE_PID.delete();
-        write(FILE_PID.getAbsolutePath(), String.valueOf(process.pid()));
+        System.out.println("启动文件准备完成...(Boot file ready to complete...)\n启动中...(Booting...)");
+    }
+
+
+    private static String getJarsLine() throws Exception {
+        File file = null;
+        if (isWindows()) {
+            file = new File(DIR, "commandLine/start.libs.line");
+            String userDir = System.getProperties().get("user.home").toString();
+            userDir = userDir.replaceAll("\\\\", "\\\\\\\\");
+            String mrp = userDir + "/.m2/repository";
+            String line0 = readAllAsString(new FileInputStream(file));
+            return line0.trim().replaceAll("%mrp%", mrp);
+        } else if (isLinux()) {
+            file = new File(DIR, "commandLine/start.libs.line0");
+            String userDir = System.getProperties().get("user.home").toString();
+            String mrp = userDir + "/.m2/repository";
+            String line0 = readAllAsString(new FileInputStream(file));
+            return line0.trim().replaceAll("%mrp%", mrp);
+        }
+        return null;
+    }
+
+    public static boolean isLinux() {
+        return System.getProperty("os.name").toLowerCase().contains("linux");
+    }
+
+    public static boolean isWindows() {
+        return System.getProperty("os.name").toLowerCase().contains("windows");
     }
 
     private static void deleteUp() throws IOException {
-        File file = new File(FN0);
+        File file = new File(YC0);
         if (file.exists()) {
-            String tempDir = System.getProperty("java.io.tmpdir");
             String fn1 = readAllAsString(new FileInputStream(file)).trim();
-            File upF0 = new File(tempDir, fn1);
+            File upF0 = new File(fn1);
             System.out.println("delete temp file status ");
             System.out.print(upF0.delete());
             System.out.print(" ");
@@ -125,41 +134,8 @@ public class Starter {
         }
     }
 
-    private static void outE(InputStream errorStream) {
-        new Thread(() -> {
-            try {
-                BufferedReader reader = new BufferedReader(new InputStreamReader(errorStream));
-                String line = null;
-                while ((line = reader.readLine()) != null) {
-                    System.err.println(line);
-                }
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }).start();
-    }
-
-    private static void out(InputStream is) {
-        new Thread(() -> {
-            try {
-                BufferedReader reader = new BufferedReader(new InputStreamReader(is));
-                String line = null;
-                while ((line = reader.readLine()) != null) {
-                    System.out.println(line);
-                }
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }).start();
-    }
-
-    private static void deleteF0() {
-        f0.delete();
-    }
-
     private static void copyDefaultConfig() throws IOException {
         new File("./conf").mkdirs();
-        copy(DIR + "/conf/bots.conf_template.json", "./conf/bots.conf.json", false);
         copy(DIR + "/conf/conf_template.txt", "./conf/conf.txt", false);
         copy(DIR + "/application.yml", "./application.yml", false);
         copy(DIR + "/superQList.txt", "./superQList.txt", false);
@@ -168,17 +144,4 @@ public class Starter {
             appendLine("./conf/conf.txt", "\nauth_code=" + code);
     }
 
-    private static String getJarsLine() {
-        File file = new File(DIR, "commandLine/start.libs.line");
-        try {
-            String userDir = System.getProperties().get("user.home").toString();
-            userDir = userDir.replaceAll("\\\\", "\\\\\\\\");
-            String mrp = userDir + "/.m2/repository";
-            String line0 = readAllAsString(new FileInputStream(file));
-            return line0.trim().replaceAll("%mrp%", mrp);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
 }
