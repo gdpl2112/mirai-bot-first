@@ -4,6 +4,7 @@ import java.io.*;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.Scanner;
+import java.util.regex.Matcher;
 
 import static io.github.kloping.Utils.*;
 
@@ -12,7 +13,7 @@ import static io.github.kloping.Utils.*;
  */
 public class Starter {
     public static final String HOST = "http://kloping.top";
-    public static final String DIR = "./mirai-bot-first";
+    public static final String DIR = ".";
     public static final String CONFIG_FILE = "./conf/conf.txt";
     public static final Scanner SC = new Scanner(System.in);
     public static String code = "";
@@ -64,19 +65,20 @@ public class Starter {
         System.out.println("启动文件准备完成...(Boot file ready to complete...)\n启动中...(Booting...)");
     }
 
-    private static String getJarsLine() throws Exception {
+    public static String getJarsLine() throws Exception {
         File file = null;
         String mrp = null;
         if (isWindows()) {
             file = new File(DIR, "commandLine/start.libs.line");
             String userDir = System.getProperties().get("user.home").toString();
-            userDir = userDir.replaceAll("\\\\", "\\\\");
-            mrp = userDir + "\\.m2\\repository";
+            userDir = userDir.replaceAll("\\\\", Matcher.quoteReplacement("\\\\"));
+            mrp = userDir + "\\\\.m2\\\\repository";
         } else if (isLinux()) {
             file = new File(DIR, "commandLine/start.libs.line0");
             String userDir = System.getProperties().get("user.home").toString();
             mrp = userDir + "/.m2/repository";
         }
+        System.out.println(mrp);
         String line0 = readAllAsString(new FileInputStream(file));
         return line0.trim().replaceAll("%mrp%", mrp);
     }
