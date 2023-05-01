@@ -70,7 +70,6 @@ public class Starter {
         if (isWindows()) {
             file = new File(DIR, "commandLine/start.libs.line");
             String userDir = System.getProperties().get("user.home").toString();
-            userDir = userDir.replaceAll("\\\\", "\\\\\\\\");
             String mrp = String.format("%s\\.m2\\repository", userDir);
             String line0 = readAllAsString(new FileInputStream(file));
             return line0.trim().replaceAll("%mrp%", mrp);
