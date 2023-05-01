@@ -26,12 +26,6 @@ public class Starter {
 
 
     public static void main(String[] args) throws Exception {
-        Runtime.getRuntime().addShutdownHook(new Thread(() -> {
-            F0.delete();
-            if (process != null) {
-                process.destroy();
-            }
-        }));
         if (isWindows()) {
             SPLIT_CHAR = "\\";
         } else if (isLinux()) {
