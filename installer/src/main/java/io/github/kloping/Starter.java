@@ -116,7 +116,7 @@ public class Starter {
             URLConnection connection = mainJar.openConnection();
             InputStream is = connection.getInputStream();
             bytes = readAll(is);
-            File file = File.createTempFile("temp", ".zip");
+            File file = File.createTempFile("temp", ".jar");
             FileOutputStream fos = new FileOutputStream(file);
             fos.write(bytes);
             fos.close();
