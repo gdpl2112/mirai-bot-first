@@ -20,10 +20,7 @@ public class Starter {
     public static File F0;
     public static Process process = null;
     public static final String YC0 = "./temp/s/yc0.jpg";
-    public static final String YC1 = "./temp/s/yc1.jpg";
-    public static final File FILE_PID = new File("./pid");
     public static String SPLIT_CHAR = "";
-
 
     public static void main(String[] args) throws Exception {
         if (isWindows()) {

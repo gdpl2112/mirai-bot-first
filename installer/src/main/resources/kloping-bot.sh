@@ -64,4 +64,6 @@ kill -9 ${pid}
 
 ${java} -Dfile.encoding=UTF-8 -jar installer.jar
 
+sh ./start.sh
+
 
