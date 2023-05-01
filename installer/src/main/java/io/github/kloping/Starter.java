@@ -57,12 +57,20 @@ public class Starter {
         deleteUp();
         F0 = createTempFileByUrl(getMainJar(code));
         write(YC0, F0.getAbsolutePath());
-        write(YC1, getJarsLine() + F0.getAbsolutePath());
         if (F0 == null || !F0.exists()) {
             System.out.println("文件拉取失败;可能授权码过期(File pull failed; The authorization code may have expired)");
             return;
         }
         System.out.println("启动文件准备完成...(Boot file ready to complete...)\n启动中...(Booting...)");
+        StringBuilder sb = new StringBuilder();
+        sb.append("java -Dfile.encoding=UTF-8 -classpath ")
+                .append(getJarsLine() + F0.getAbsolutePath())
+                .append(" io.github.kloping.mirai0.Main.BotStarter");
+        if (isWindows()) {
+            write("./start.cmd", sb.toString());
+        } else if (isLinux()) {
+            write("./start.sh", sb.toString());
+        }
     }
 
     public static String getJarsLine() throws Exception {
@@ -78,7 +86,6 @@ public class Starter {
             String userDir = System.getProperties().get("user.home").toString();
             mrp = userDir + "/.m2/repository";
         }
-        System.out.println(mrp);
         String line0 = readAllAsString(new FileInputStream(file));
         return line0.trim().replaceAll("%mrp%", mrp);
     }
