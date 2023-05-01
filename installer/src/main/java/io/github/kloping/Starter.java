@@ -64,23 +64,21 @@ public class Starter {
         System.out.println("启动文件准备完成...(Boot file ready to complete...)\n启动中...(Booting...)");
     }
 
-
     private static String getJarsLine() throws Exception {
         File file = null;
+        String mrp = null;
         if (isWindows()) {
             file = new File(DIR, "commandLine/start.libs.line");
             String userDir = System.getProperties().get("user.home").toString();
-            String mrp = String.format("%s\\.m2\\repository", userDir);
-            String line0 = readAllAsString(new FileInputStream(file));
-            return line0.trim().replaceAll("%mrp%", mrp);
+            userDir = userDir.replaceAll("\\\\", "\\\\");
+            mrp = userDir + "\\.m2\\repository";
         } else if (isLinux()) {
             file = new File(DIR, "commandLine/start.libs.line0");
             String userDir = System.getProperties().get("user.home").toString();
-            String mrp = userDir + "/.m2/repository";
-            String line0 = readAllAsString(new FileInputStream(file));
-            return line0.trim().replaceAll("%mrp%", mrp);
+            mrp = userDir + "/.m2/repository";
         }
-        return null;
+        String line0 = readAllAsString(new FileInputStream(file));
+        return line0.trim().replaceAll("%mrp%", mrp);
     }
 
     public static boolean isLinux() {

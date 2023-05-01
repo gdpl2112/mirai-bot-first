@@ -142,7 +142,7 @@ public class Utils {
     public static void write(String fillname, String line) throws IOException {
         File file = new File(fillname);
         file.getParentFile().mkdirs();
-        FileWriter fw = new FileWriter(fillname, true);
+        FileWriter fw = new FileWriter(fillname, false);
         fw.write(line);
         fw.close();
     }
