@@ -21,6 +21,8 @@ public class Starter {
     public static final String YC0 = "./temp/s/yc0.jpg";
     public static final String YC1 = "./temp/s/yc1.jpg";
     public static final File FILE_PID = new File("./pid");
+    public static String SPLIT_CHAR = "";
+
 
     public static void main(String[] args) throws Exception {
         Runtime.getRuntime().addShutdownHook(new Thread(() -> {
@@ -29,7 +31,11 @@ public class Starter {
                 process.destroy();
             }
         }));
-
+        if (isWindows()) {
+            SPLIT_CHAR = "\\";
+        } else if (isLinux()) {
+            SPLIT_CHAR = "/";
+        }
         if (new File(CONFIG_FILE).exists()) {
             for (String read : reads(CONFIG_FILE)) {
                 try {
@@ -42,13 +48,11 @@ public class Starter {
                 }
             }
         }
-
         if (code.isEmpty()) {
             System.out.println("请输入授权码");
             code = SC.nextLine().trim();
         }
         copyDefaultConfig();
-        //file main jar
         deleteUp();
         F0 = createTempFileByUrl(getMainJar(code));
         write(YC0, F0.getAbsolutePath());
@@ -67,7 +71,7 @@ public class Starter {
             file = new File(DIR, "commandLine/start.libs.line");
             String userDir = System.getProperties().get("user.home").toString();
             userDir = userDir.replaceAll("\\\\", "\\\\\\\\");
-            String mrp = userDir + "/.m2/repository";
+            String mrp = String.format("%s\\.m2\\repository", userDir);
             String line0 = readAllAsString(new FileInputStream(file));
             return line0.trim().replaceAll("%mrp%", mrp);
         } else if (isLinux()) {
@@ -96,7 +100,7 @@ public class Starter {
             System.out.println("delete temp file status ");
             System.out.print(upF0.delete());
             System.out.print(" ");
-            System.out.print(file.delete());
+            System.out.println(file.delete());
         }
     }
 
