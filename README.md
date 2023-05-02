@@ -15,13 +15,14 @@
 * [Project](https://github.com/gdpl2112/mirai-bot-first-src/tree/master/main/java/Project)
   为主体内容 <br>
   其入口 将消息转化为 string 依靠 [SpringTool](https://github.com/Kloping/my-spring-tool) 匹配 Action的形式执行<br>
-  * [具体入口实现](https://github.com/gdpl2112/mirai-bot-first-src/blob/master/main/java/io/github/kloping/Mirai/Main/Handlers/MyHandler.java)
-  * [具体出口实现](https://github.com/gdpl2112/mirai-bot-first-src/blob/master/main/java/io/github/kloping/Mirai/Main/Resource.java)
-* mirai 的 [启动目录](https://github.com/gdpl2112/mirai-bot-first-src/blob/master/main/java/io/github/kloping/Mirai/Main/)
-  *
+    * [具体入口实现](https://github.com/gdpl2112/mirai-bot-first-src/blob/master/main/java/io/github/kloping/Mirai/Main/Handlers/MyHandler.java)
+    * [具体出口实现](https://github.com/gdpl2112/mirai-bot-first-src/blob/master/main/java/io/github/kloping/Mirai/Main/Resource.java)
+* mirai
+  的 [启动目录](https://github.com/gdpl2112/mirai-bot-first-src/blob/master/main/java/io/github/kloping/Mirai/Main/)
+    *
   通过 [BotStarter](https://github.com/gdpl2112/mirai-bot-first-src/blob/master/main/java/io/github/kloping/Mirai/Main/BotStarter.java)
   获取配置文件中的 bot id password 登录
-  * 以及消息通道注册,处理
+    * 以及消息通道注册,处理
 
 - 该rep 以转移至 [gdpl2112](https://github.com/gdpl2112) organizations
 - 且仅对其内成员可见
@@ -29,35 +30,51 @@
 
 ## 使用
 
-在您的mydb1数库中执行 文件 [sql](https://gitee.com/kloping/mirai-bot-first/blob/master/sql/init.sql)
+创建数库并执行 文件 [sql](https://gitee.com/kloping/mirai-bot-first/blob/master/sql/init.sql)
 
-[mydb1-主库](https://gitee.com/kloping/mirai-bot-first/blob/master/application.yml#L3)
-[mydb1存储消息用](https://gitee.com/kloping/mirai-bot-first/blob/master/spring/conf/application0.yml)
-可自行更名
+脚本
 
-更改配置
+1. [x] linux [kloping-bot](kloping-bot.sh)
+2. [x] win [kloping-bot](kloping-bot.bat)
 
-![](imgs/img.png)
+配置
 
-将其更名为
+- application.yml
 
-![](imgs/img_1.png)
+```yaml
+   spring:
+   datasource:
+    #     数据源配置 localhost:3306 数据库位置 gdb1 数据库名 根据自己情况修改
+     url: jdbc:mysql://localhost:3306/gdb1?characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai&rewriteBatchedStatements=true
+     #数据库用户名
+     username: root
+     #数据库密码
+     password: root
+     driver-class-name: com.mysql.jdbc.Driver
+   resources:
+     static-locations: classpath:static,file:./images,file:./static,file:./temp
+   web:
+     resources:
+       static-locations: classpath:static,file:./images,file:./static,file:./temp
 
-- bot.con.json
+   server:
+     #web端口
+     port: 20049
+     tomcat:
+       remote-ip-header: x-forward-for
+       uri-encoding: UTF-8
+       max-threads: 1000
+       max-http-header-size: 8096
 
-```json  
-  {
-    "bots": [
-    {
-      //QQ密码
-      "passWord": "password",
-      //QQ账号
-      "qq": 123456789
-    }
-  ]
-  }
-```
+   web:
+     url: http://localhost
+     pwd: 123456
 
+   auth:
+     super:
+       pwd: 000000
+     pwd: 123456
+```  
 - conf.txt
 
 ```text
