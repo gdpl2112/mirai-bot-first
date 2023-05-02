@@ -147,4 +147,35 @@ public class Utils {
         fw.close();
     }
 
+
+    public static boolean isLinux() {
+        return System.getProperty("os.name").toLowerCase().contains("linux");
+    }
+
+    public static boolean isWindows() {
+        return System.getProperty("os.name").toLowerCase().contains("windows");
+    }
+
+    public static String getAbsPath(File f0) {
+        String path = f0.getAbsolutePath();
+        File of = f0;
+        while (true) {
+            File pf = of.getParentFile();
+            if (pf == null) break;
+            String fn = pf.getName();
+            if (fn.contains("~")) {
+                String p0 = fn.substring(0, 6);
+                for (File file : pf.getParentFile().listFiles()) {
+                    String fn0 = file.getName();
+                    if (fn.length() < 6) continue;
+                    if (fn0.substring(0, 6).toUpperCase().equals(p0)) {
+                        path = path.replace(fn, fn0);
+                        break;
+                    }
+                }
+            }
+            of = pf;
+        }
+        return path;
+    }
 }

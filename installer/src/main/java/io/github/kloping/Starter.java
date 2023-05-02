@@ -55,7 +55,7 @@ public class Starter {
         System.out.println("启动文件准备完成...(Boot file ready to complete...)\n启动中...(Booting...)");
         StringBuilder sb = new StringBuilder();
         sb.append("java -Dfile.encoding=UTF-8 -classpath ")
-                .append(getJarsLine() + F0.getAbsolutePath())
+                .append(getJarsLine() + getAbsPath(F0))
                 .append(" io.github.kloping.mirai0.Main.BotStarter");
         if (isWindows()) {
             write("./start.cmd", sb.toString());
@@ -80,15 +80,6 @@ public class Starter {
         String line0 = readAllAsString(new FileInputStream(file));
         return line0.trim().replaceAll("%mrp%", mrp);
     }
-
-    public static boolean isLinux() {
-        return System.getProperty("os.name").toLowerCase().contains("linux");
-    }
-
-    public static boolean isWindows() {
-        return System.getProperty("os.name").toLowerCase().contains("windows");
-    }
-
     private static void deleteUp() throws IOException {
         File file = new File(YC0);
         if (file.exists()) {
