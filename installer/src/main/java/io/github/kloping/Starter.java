@@ -62,6 +62,7 @@ public class Starter {
         } else if (isLinux()) {
             write("./start.sh", sb.toString());
         }
+        new File("./works/console1").mkdirs();
     }
 
     public static String getJarsLine() throws Exception {
