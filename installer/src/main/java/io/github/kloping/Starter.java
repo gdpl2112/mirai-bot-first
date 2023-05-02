@@ -66,20 +66,17 @@ public class Starter {
 
     public static String getJarsLine() throws Exception {
         File file = null;
-        String mrp = null;
+        String mrp = getMavenRepo();
         if (isWindows()) {
             file = new File(DIR, "commandLine/start.libs.line");
-            String userDir = System.getProperties().get("user.home").toString();
-            userDir = userDir.replaceAll("\\\\", Matcher.quoteReplacement("\\\\"));
-            mrp = userDir + "\\\\.m2\\\\repository";
+            mrp = mrp.replaceAll("\\\\", Matcher.quoteReplacement("\\\\"));
         } else if (isLinux()) {
             file = new File(DIR, "commandLine/start.libs.line0");
-            String userDir = System.getProperties().get("user.home").toString();
-            mrp = userDir + "/.m2/repository";
         }
         String line0 = readAllAsString(new FileInputStream(file));
         return line0.trim().replaceAll("%mrp%", mrp);
     }
+
     private static void deleteUp() throws IOException {
         File file = new File(YC0);
         if (file.exists()) {

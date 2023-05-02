@@ -1,7 +1,16 @@
 package io.github.kloping;
 
+import org.w3c.dom.Document;
+import org.w3c.dom.Element;
+import org.w3c.dom.Node;
+import org.w3c.dom.NodeList;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
 import java.io.*;
 import java.net.URL;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -147,7 +156,6 @@ public class Utils {
         fw.close();
     }
 
-
     public static boolean isLinux() {
         return System.getProperty("os.name").toLowerCase().contains("linux");
     }
@@ -177,5 +185,29 @@ public class Utils {
             of = pf;
         }
         return path;
+    }
+
+    public static final DocumentBuilderFactory FACTORY = DocumentBuilderFactory.newInstance();
+
+    public static String getMavenRepo() throws Exception {
+        String mvns = null;
+        if (isWindows()) {
+            Process process = Runtime.getRuntime().exec("where mvn");
+            String mvnp = readAllAsString(process.getInputStream());
+            mvnp = mvnp.split("\n")[0].trim();
+            mvns = mvnp.replace("\\bin\\mvn", "\\conf\\settings.xml");
+        } else if (isLinux()) {
+            Process process =  Runtime.getRuntime().exec("which mvn");
+            String mvnp = readAllAsString(process.getInputStream());
+            mvnp = mvnp.split("\n")[0].trim();
+            mvns = mvnp.replace("/bin/mvn", "/conf/settings.xml");
+        }
+        DocumentBuilder db = FACTORY.newDocumentBuilder();
+        Document doc = doc = db.parse(Files.newInputStream(Path.of(mvns)));
+        Element element = doc.getDocumentElement();
+        NodeList list = element.getElementsByTagName("localRepository");
+        Node node = list.item(0);
+        String value = node.getTextContent();
+        return value;
     }
 }
