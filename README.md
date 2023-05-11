@@ -73,14 +73,10 @@ spring:
 Illegal.txt=
 //非法名词
 Illegal.send=
-//可留空
-handled.url=
 //超级权限QQ号 , #逗号分割
 superQL=1,2
 //机器人自称(名字 
 bot.myName=0号
-//登录协议
-bot.protocol=ANDROID_PHONE
 //是否为测试环境
 env.test=false
 ```
