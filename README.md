@@ -8,6 +8,10 @@
 
 该项目 由于经过几次的框架更改 变成如今的面孔
 
+## **[菜单/介绍/功能](./docs/menu.md)**
+
+<hr>
+
 * [Project](https://github.com/gdpl2112/mirai-bot-first-src/tree/master/main/java/Project)
   为主体内容 <br>
   其入口 将消息转化为 string 依靠 [SpringTool](https://github.com/Kloping/my-spring-tool) 匹配 Action的形式执行<br>
