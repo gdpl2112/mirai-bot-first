@@ -33,7 +33,7 @@
 - application.yml
 
 ```yaml
-   spring:
+spring:
    datasource:
     #     数据源配置 localhost:3306 数据库位置 gdb1 数据库名 根据自己情况修改
      url: jdbc:mysql://localhost:3306/gdb1?characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai&rewriteBatchedStatements=true
