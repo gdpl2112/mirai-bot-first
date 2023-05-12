@@ -24,6 +24,6 @@ web:
 
 auth:
   super:
-    pwd: 000000
+    pwd: 123456
   pwd: 123456
 
