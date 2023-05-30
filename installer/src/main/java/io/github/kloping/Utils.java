@@ -197,7 +197,7 @@ public class Utils {
             mvnp = mvnp.split("\n")[0].trim();
             mvns = mvnp.replace("\\bin\\mvn", "\\conf\\settings.xml");
         } else if (isLinux()) {
-            Process process =  Runtime.getRuntime().exec("which mvn");
+            Process process = Runtime.getRuntime().exec("which mvn");
             String mvnp = readAllAsString(process.getInputStream());
             mvnp = mvnp.split("\n")[0].trim();
             mvns = mvnp.replace("/bin/mvn", "/conf/settings.xml");
@@ -207,6 +207,10 @@ public class Utils {
         Element element = doc.getDocumentElement();
         NodeList list = element.getElementsByTagName("localRepository");
         Node node = list.item(0);
+        if (node == null) {
+            File dir = new File(System.getProperty("user.home"), ".m2");
+            return dir.getAbsolutePath();
+        }
         String value = node.getTextContent();
         return value;
     }
