@@ -67,6 +67,7 @@ public class Starter {
     public static String getJarsLine() throws Exception {
         File file = null;
         String mrp = getMavenRepo();
+        System.out.println("maven repo => " + mrp);
         if (isWindows()) {
             file = new File(DIR, "commandLine/start.libs.line");
             mrp = mrp.replaceAll("\\\\", Matcher.quoteReplacement("\\\\"));
