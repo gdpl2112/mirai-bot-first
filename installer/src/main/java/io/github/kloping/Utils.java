@@ -208,7 +208,7 @@ public class Utils {
         NodeList list = element.getElementsByTagName("localRepository");
         Node node = list.item(0);
         if (node == null) {
-            File dir = new File(System.getProperty("user.home"), ".m2");
+            File dir = new File(System.getProperty("user.home"), ".m2/repository");
             return dir.getAbsolutePath();
         }
         String value = node.getTextContent();
