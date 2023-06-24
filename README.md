@@ -97,3 +97,5 @@ Linux 依赖下载
     mvn -f pom.xml dependency:copy-dependencies -X
 
 </details>
+
+main
