@@ -32,6 +32,11 @@
         <mirai-version>2.15.0-RC</mirai-version>
     </properties>
     <dependencies>
+        <dependency>
+            <groupId>io.github.Kloping</groupId>
+            <artifactId>bot-qqpd-java</artifactId>
+            <version>1.4.8-M3</version>
+        </dependency>
         <!--velocity-->
         <dependency>
             <groupId>org.apache.velocity</groupId>
@@ -45,23 +50,11 @@
             <version>3.9.0</version>
             <scope>test</scope>
         </dependency>
-        <!--自制框架-->
-        <dependency>
-            <groupId>io.github.Kloping</groupId>
-            <artifactId>SpringTool</artifactId>
-            <version>0.5.8</version>
-        </dependency>
         <!--自制redis工具-->
         <dependency>
             <groupId>io.github.Kloping</groupId>
             <artifactId>spt-redis</artifactId>
             <version>0.2.1</version>
-        </dependency>
-        <!--自制工具-->
-        <dependency>
-            <groupId>io.github.Kloping</groupId>
-            <artifactId>JvUtils</artifactId>
-            <version>0.4.7</version>
         </dependency>
         <!--生成验证图片的框架-->
         <dependency>
