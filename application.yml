@@ -10,6 +10,11 @@ spring:
     resources:
       static-locations: classpath:static,file:./images,file:./static,file:./temp
 
+mybatis-plus:
+  configuration:
+    #缓存开启
+    cache-enabled: true
+
 server:
   port: 20049
   tomcat:
