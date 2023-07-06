@@ -35,7 +35,7 @@
         <dependency>
             <groupId>io.github.Kloping</groupId>
             <artifactId>bot-qqpd-java</artifactId>
-            <version>1.4.9-M1</version>
+            <version>1.4.9-R1</version>
         </dependency>
         <!--自创框架-->
         <dependency>
@@ -143,11 +143,11 @@
             <version>2.9.0</version>
         </dependency>
         <!--mirai-->
-<!--        <dependency>-->
-<!--            <groupId>net.mamoe</groupId>-->
-<!--            <artifactId>mirai-core-all</artifactId>-->
-<!--            <version>${mirai-version}</version>-->
-<!--        </dependency>-->
+        <!--        <dependency>-->
+        <!--            <groupId>net.mamoe</groupId>-->
+        <!--            <artifactId>mirai-core-all</artifactId>-->
+        <!--            <version>${mirai-version}</version>-->
+        <!--        </dependency>-->
         <dependency>
             <groupId>net.mamoe</groupId>
             <artifactId>mirai-core-jvm</artifactId>
