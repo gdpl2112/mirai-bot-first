@@ -32,6 +32,12 @@
         <mirai-version>2.15.0-RC</mirai-version>
     </properties>
     <dependencies>
+        <!--wss-->
+        <dependency>
+            <groupId>org.java-websocket</groupId>
+            <artifactId>Java-WebSocket</artifactId>
+            <version>1.5.3</version>
+        </dependency>
         <!--velocity-->
         <dependency>
             <groupId>org.apache.velocity</groupId>
