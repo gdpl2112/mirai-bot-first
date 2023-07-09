@@ -1,3 +1,5 @@
+%mrp%/org/java-websocket/Java-WebSocket/1.5.3/Java-WebSocket-1.5.3.jar
+%mrp%/org/slf4j/slf4j-api/1.7.36/slf4j-api-1.7.36.jar
 %mrp%/org/apache/velocity/velocity/1.7/velocity-1.7.jar
 %mrp%/commons-collections/commons-collections/3.2.1/commons-collections-3.2.1.jar
 %mrp%/commons-lang/commons-lang/2.4/commons-lang-2.4.jar
@@ -21,7 +23,6 @@
 %mrp%/org/springframework/spring-oxm/5.3.24/spring-oxm-5.3.24.jar
 %mrp%/org/springframework/spring-aop/5.3.24/spring-aop-5.3.24.jar
 %mrp%/org/springframework/spring-context-support/5.3.24/spring-context-support-5.3.24.jar
-%mrp%/org/slf4j/slf4j-api/1.7.36/slf4j-api-1.7.36.jar
 %mrp%/redis/clients/jedis/3.8.0/jedis-3.8.0.jar
 %mrp%/org/apache/commons/commons-pool2/2.11.1/commons-pool2-2.11.1.jar
 %mrp%/io/github/wnjustdoit/pinyin4j/2.6.0/pinyin4j-2.6.0.jar
