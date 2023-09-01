@@ -29,25 +29,14 @@
         <maven.compiler.compilerVersion>11</maven.compiler.compilerVersion>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <mirai-version>2.15.0-RC</mirai-version>
+        <mirai-version>2.15.0</mirai-version>
     </properties>
     <dependencies>
+        <!--wss-->
         <dependency>
-            <groupId>io.github.Kloping</groupId>
-            <artifactId>bot-qqpd-java</artifactId>
-            <version>1.4.9-R1</version>
-        </dependency>
-        <!--自创框架-->
-        <dependency>
-            <groupId>io.github.kloping</groupId>
-            <artifactId>SpringTool</artifactId>
-            <version>0.6.1-M2</version>
-        </dependency>
-        <!--颜色字体-->
-        <dependency>
-            <groupId>org.fusesource.jansi</groupId>
-            <artifactId>jansi</artifactId>
-            <version>2.4.0</version>
+            <groupId>org.java-websocket</groupId>
+            <artifactId>Java-WebSocket</artifactId>
+            <version>1.5.3</version>
         </dependency>
         <!--velocity-->
         <dependency>
@@ -62,26 +51,28 @@
             <version>3.9.0</version>
             <scope>test</scope>
         </dependency>
-        <!--自制redis工具-->
+        <!--自制框架-->
         <dependency>
             <groupId>io.github.Kloping</groupId>
-            <artifactId>spt-redis</artifactId>
-            <version>0.2.1</version>
+            <artifactId>SpringTool</artifactId>
+            <version>0.6.1-R2</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>io.github.Kloping</groupId>
+                    <artifactId>JvUtils</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>io.github.Kloping</groupId>
+            <artifactId>JvUtils</artifactId>
+            <version>0.4.9-R1</version>
         </dependency>
         <!--生成验证图片的框架-->
         <dependency>
             <groupId>com.github.penggle</groupId>
             <artifactId>kaptcha</artifactId>
             <version>2.3.2</version>
-        </dependency>
-        <!--spring redis非关系型spring 依赖-->
-        <dependency>
-            <groupId>org.springframework.data</groupId>
-            <artifactId>spring-data-redis</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>redis.clients</groupId>
-            <artifactId>jedis</artifactId>
         </dependency>
         <!--拼音支持-->
         <dependency>
@@ -143,11 +134,6 @@
             <version>2.9.0</version>
         </dependency>
         <!--mirai-->
-        <!--        <dependency>-->
-        <!--            <groupId>net.mamoe</groupId>-->
-        <!--            <artifactId>mirai-core-all</artifactId>-->
-        <!--            <version>${mirai-version}</version>-->
-        <!--        </dependency>-->
         <dependency>
             <groupId>net.mamoe</groupId>
             <artifactId>mirai-core-jvm</artifactId>
@@ -219,19 +205,4 @@
             <version>1.4</version>
         </dependency>
     </dependencies>
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>repackage</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-        </plugins>
-    </build>
 </project>
