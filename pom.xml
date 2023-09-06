@@ -32,6 +32,39 @@
         <mirai-version>2.15.0</mirai-version>
     </properties>
     <dependencies>
+        <!--自制框架-->
+        <dependency>
+            <groupId>io.github.Kloping</groupId>
+            <artifactId>SpringTool</artifactId>
+            <version>0.6.1-R2</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>io.github.Kloping</groupId>
+                    <artifactId>JvUtils</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>io.github.Kloping</groupId>
+            <artifactId>JvUtils</artifactId>
+            <version>0.4.9-R1</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/io.github.kloping/bot-qqpd-java -->
+        <dependency>
+            <groupId>io.github.kloping</groupId>
+            <artifactId>bot-qqpd-java</artifactId>
+            <version>1.4.9-R2</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>io.github.Kloping</groupId>
+                    <artifactId>SpringTool</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>io.github.kloping</groupId>
+                    <artifactId>SpringTool</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
         <!--wss-->
         <dependency>
             <groupId>org.java-websocket</groupId>
@@ -50,23 +83,6 @@
             <artifactId>commons-net</artifactId>
             <version>3.9.0</version>
             <scope>test</scope>
-        </dependency>
-        <!--自制框架-->
-        <dependency>
-            <groupId>io.github.Kloping</groupId>
-            <artifactId>SpringTool</artifactId>
-            <version>0.6.1-R2</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>io.github.Kloping</groupId>
-                    <artifactId>JvUtils</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-        <dependency>
-            <groupId>io.github.Kloping</groupId>
-            <artifactId>JvUtils</artifactId>
-            <version>0.4.9-R1</version>
         </dependency>
         <!--生成验证图片的框架-->
         <dependency>

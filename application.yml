@@ -5,6 +5,13 @@ bot-291984860:
       username: root
       password: root
       driver-class-name: com.mysql.jdbc.Driver
+bot-4761928397978729414:
+  spring:
+    datasource:
+      url: jdbc:mysql://localhost:3306/testdb0?characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai&rewriteBatchedStatements=true
+      username: root
+      password: root
+      driver-class-name: com.mysql.jdbc.Driver
 bot-930204019:
   spring:
     datasource:
