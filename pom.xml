@@ -36,7 +36,7 @@
         <dependency>
             <groupId>io.github.Kloping</groupId>
             <artifactId>SpringTool</artifactId>
-            <version>0.6.1-R2</version>
+            <version>0.6.1</version>
             <exclusions>
                 <exclusion>
                     <groupId>io.github.Kloping</groupId>
@@ -47,7 +47,7 @@
         <dependency>
             <groupId>io.github.Kloping</groupId>
             <artifactId>JvUtils</artifactId>
-            <version>0.4.9-R1</version>
+            <version>0.4.9-R2</version>
         </dependency>
         <!-- https://mvnrepository.com/artifact/io.github.kloping/bot-qqpd-java -->
         <dependency>
