@@ -10,9 +10,9 @@ sequenceDiagram
     alt 匹配可处理
         B ->> A: 返回处理结果
     else 匹配不可处理
-        B --> A: 返回空或不返回
+        B -->> A: 返回空或不返回
     else 不匹配
-        B --> A: 不返回
+        B -->> A: 不返回
     end
     
     alt 有返回值且非空
