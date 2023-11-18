@@ -49,11 +49,10 @@
             <artifactId>JvUtils</artifactId>
             <version>0.4.9-R3</version>
         </dependency>
-<!--         https://mvnrepository.com/artifact/io.github.kloping/bot-qqpd-java -->
         <dependency>
             <groupId>io.github.kloping</groupId>
             <artifactId>bot-qqpd-java</artifactId>
-            <version>1.5.0-L6</version>
+            <version>1.5.0-Alpha</version>
         </dependency>
         <!--wss-->
         <dependency>
