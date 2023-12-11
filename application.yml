@@ -11,3 +11,11 @@ server:
     uri-encoding: UTF-8
     max-threads: 1000
     max-http-header-size: 8096
+
+auth:
+  super:
+    pwd: 123456
+  pwd: 123456
+
+reboot:
+  cmd: java -version
