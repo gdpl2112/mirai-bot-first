@@ -17,5 +17,6 @@ auth:
     pwd: 123456
   pwd: 123456
 
-reboot:
-  cmd: java -version
+cmd:
+  reboot: java -version
+  update: javac -version
