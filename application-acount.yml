@@ -1,0 +1,22 @@
+
+mybatis-plus:
+  configuration:
+    #缓存开启
+    cache-enabled: true
+
+server:
+  port: 20049
+  tomcat:
+    remote-ip-header: x-forward-for
+    uri-encoding: UTF-8
+    max-threads: 1000
+    max-http-header-size: 8096
+
+auth:
+  super:
+    pwd: 123456
+  pwd: 123456
+
+cmd:
+  reboot: java -version
+  update: javac -version
