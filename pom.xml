@@ -5,7 +5,6 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>io.github.kloping</groupId>
     <artifactId>main-bot</artifactId>
-    <packaging>pom</packaging>
     <version>1.0</version>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -214,10 +213,26 @@
             <artifactId>javacv-platform</artifactId>
             <version>1.5</version>
         </dependency>
-        <dependency>
-            <groupId>io.github.gdpl2112</groupId>
-            <artifactId>KlopLocalityDataBase</artifactId>
-            <version>1.4</version>
-        </dependency>
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <version>2.5.5</version>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <mainClass>io.github.kloping.mihdp.MihDpMain</mainClass>
+                        </manifest>
+                    </archive>
+                    <descriptorRefs>
+                        <descriptorRef>jar-with-dependencies</descriptorRef>
+                    </descriptorRefs>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
 </project>
