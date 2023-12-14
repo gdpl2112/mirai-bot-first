@@ -20,3 +20,4 @@ auth:
 cmd:
   reboot: java -version
   update: javac -version
+  update-m: javap -version
