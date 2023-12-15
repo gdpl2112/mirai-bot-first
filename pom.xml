@@ -42,26 +42,26 @@
             <version>1.0.18</version>
         </dependency>
         <!--自制框架-->
-        <dependency>
-            <groupId>io.github.Kloping</groupId>
-            <artifactId>SpringTool</artifactId>
-            <version>0.6.2</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>io.github.Kloping</groupId>
-                    <artifactId>JvUtils</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-        <dependency>
-            <groupId>io.github.Kloping</groupId>
-            <artifactId>JvUtils</artifactId>
-            <version>0.4.9-Beta1</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>io.github.Kloping</groupId>-->
+<!--            <artifactId>SpringTool</artifactId>-->
+<!--            <version>0.6.2</version>-->
+<!--            <exclusions>-->
+<!--                <exclusion>-->
+<!--                    <groupId>io.github.Kloping</groupId>-->
+<!--                    <artifactId>JvUtils</artifactId>-->
+<!--                </exclusion>-->
+<!--            </exclusions>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>io.github.Kloping</groupId>-->
+<!--            <artifactId>JvUtils</artifactId>-->
+<!--            <version>0.4.9-Beta1</version>-->
+<!--        </dependency>-->
         <dependency>
             <groupId>io.github.kloping</groupId>
             <artifactId>bot-qqpd-java</artifactId>
-            <version>1.5.0-Beta6</version>
+            <version>1.5.0-Beta7</version>
         </dependency>
         <!--wss-->
         <dependency>
