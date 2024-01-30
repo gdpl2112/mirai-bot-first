@@ -42,6 +42,16 @@
             <version>1.0.18</version>
         </dependency>
         <!--自制框架-->
+        <dependency>
+            <groupId>io.github.Kloping</groupId>
+            <artifactId>spt-redis</artifactId>
+            <version>0.2.3</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>io.github.Kloping</groupId>
+                    <artifactId>SpringTool</artifactId>
+                </exclusion></exclusions>
+        </dependency>
 <!--        <dependency>-->
 <!--            <groupId>io.github.Kloping</groupId>-->
 <!--            <artifactId>SpringTool</artifactId>-->
