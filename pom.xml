@@ -14,7 +14,7 @@
     </parent>
     <repositories>
         <repository>
-            <id>m1</id>
+            <id>main</id>
             <url>https://repo1.maven.org/maven2/</url>
         </repository>
         <repository>
@@ -71,7 +71,7 @@
         <dependency>
             <groupId>io.github.kloping</groupId>
             <artifactId>bot-qqpd-java</artifactId>
-            <version>1.5.0-RC</version>
+            <version>1.5.0</version>
         </dependency>
         <!--wss-->
         <dependency>
