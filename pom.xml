@@ -50,29 +50,41 @@
                 <exclusion>
                     <groupId>io.github.Kloping</groupId>
                     <artifactId>SpringTool</artifactId>
-                </exclusion></exclusions>
+                </exclusion>
+            </exclusions>
         </dependency>
-<!--        <dependency>-->
-<!--            <groupId>io.github.Kloping</groupId>-->
-<!--            <artifactId>SpringTool</artifactId>-->
-<!--            <version>0.6.2</version>-->
-<!--            <exclusions>-->
-<!--                <exclusion>-->
-<!--                    <groupId>io.github.Kloping</groupId>-->
-<!--                    <artifactId>JvUtils</artifactId>-->
-<!--                </exclusion>-->
-<!--            </exclusions>-->
-<!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>io.github.Kloping</groupId>-->
-<!--            <artifactId>JvUtils</artifactId>-->
-<!--            <version>0.4.9-Beta1</version>-->
-<!--        </dependency>-->
+        <dependency>
+            <groupId>io.github.gdpl2112</groupId>
+            <artifactId>OneBotV12-WeChat</artifactId>
+            <version>1.3.4-R1</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>io.github.Kloping</groupId>
+                    <artifactId>SpringTool</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
         <dependency>
             <groupId>io.github.kloping</groupId>
             <artifactId>bot-qqpd-java</artifactId>
             <version>1.5.1-Beta1</version>
         </dependency>
+        <!--        <dependency>-->
+        <!--            <groupId>io.github.Kloping</groupId>-->
+        <!--            <artifactId>SpringTool</artifactId>-->
+        <!--            <version>0.6.2</version>-->
+        <!--            <exclusions>-->
+        <!--                <exclusion>-->
+        <!--                    <groupId>io.github.Kloping</groupId>-->
+        <!--                    <artifactId>JvUtils</artifactId>-->
+        <!--                </exclusion>-->
+        <!--            </exclusions>-->
+        <!--        </dependency>-->
+        <!--        <dependency>-->
+        <!--            <groupId>io.github.Kloping</groupId>-->
+        <!--            <artifactId>JvUtils</artifactId>-->
+        <!--            <version>0.4.9-Beta1</version>-->
+        <!--        </dependency>-->
         <!--wss-->
         <dependency>
             <groupId>org.java-websocket</groupId>
