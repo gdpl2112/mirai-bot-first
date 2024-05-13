@@ -33,7 +33,7 @@
         <maven.compiler.compilerVersion>11</maven.compiler.compilerVersion>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <mirai-version>2.17.0-dev-153</mirai-version>
+        <mirai-version>2.16.0</mirai-version>
     </properties>
     <dependencies>
         <dependency>
