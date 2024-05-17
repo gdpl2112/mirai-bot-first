@@ -85,6 +85,27 @@
         <!--            <artifactId>JvUtils</artifactId>-->
         <!--            <version>0.4.9-Beta1</version>-->
         <!--        </dependency>-->
+        <!--mirai-->
+        <dependency>
+            <groupId>top.mrxiaom</groupId>
+            <artifactId>overflow-core-api</artifactId>
+            <version>${mirai-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.bouncycastle</groupId>
+            <artifactId>bcprov-jdk15on</artifactId>
+            <version>1.64</version>
+        </dependency>
+        <dependency>
+            <groupId>net.mamoe</groupId>
+            <artifactId>mirai-console</artifactId>
+            <version>${mirai-version}</version>
+        </dependency>
+        <dependency>
+            <groupId>net.mamoe</groupId>
+            <artifactId>mirai-console-terminal</artifactId>
+            <version>${mirai-version}</version>
+        </dependency>
         <!--wss-->
         <dependency>
             <groupId>org.java-websocket</groupId>
@@ -168,22 +189,6 @@
             <groupId>com.google.code.gson</groupId>
             <artifactId>gson</artifactId>
             <version>2.9.0</version>
-        </dependency>
-        <!--mirai-->
-        <dependency>
-            <groupId>net.mamoe</groupId>
-            <artifactId>mirai-core-jvm</artifactId>
-            <version>${mirai-version}</version>
-        </dependency>
-        <dependency>
-            <groupId>net.mamoe</groupId>
-            <artifactId>mirai-console</artifactId>
-            <version>${mirai-version}</version>
-        </dependency>
-        <dependency>
-            <groupId>net.mamoe</groupId>
-            <artifactId>mirai-console-terminal</artifactId>
-            <version>${mirai-version}</version>
         </dependency>
         <!--jsoup-->
         <dependency>
