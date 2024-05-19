@@ -86,7 +86,7 @@
         <!--            <version>0.4.9-Beta1</version>-->
         <!--        </dependency>-->
         <!--mirai-->
-        <dependency>
+        <!--<dependency>
             <groupId>top.mrxiaom</groupId>
             <artifactId>overflow-core-api</artifactId>
             <version>${mirai-version}</version>
@@ -95,6 +95,11 @@
             <groupId>org.bouncycastle</groupId>
             <artifactId>bcprov-jdk15on</artifactId>
             <version>1.64</version>
+        </dependency>-->
+        <dependency>
+            <groupId>net.mamoe</groupId>
+            <artifactId>mirai-core-api-jvm</artifactId>
+            <version>2.16.0</version>
         </dependency>
         <dependency>
             <groupId>net.mamoe</groupId>
