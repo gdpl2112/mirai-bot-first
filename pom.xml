@@ -14,12 +14,12 @@
     </parent>
     <repositories>
         <repository>
-            <id>main</id>
-            <url>https://repo1.maven.org/maven2/</url>
+            <id>s01_snapshots</id>
+            <url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
         </repository>
         <repository>
-            <id>mirai-snapshots</id>
-            <url>https://repo.mirai.mamoe.net/snapshots</url>
+            <id>main</id>
+            <url>https://repo1.maven.org/maven2/</url>
         </repository>
         <repository>
             <id>minecraft-libraries</id>
@@ -69,41 +69,19 @@
             <artifactId>bot-qqpd-java</artifactId>
             <version>1.5.1-L1</version>
         </dependency>
-        <!--        <dependency>-->
-        <!--            <groupId>io.github.Kloping</groupId>-->
-        <!--            <artifactId>SpringTool</artifactId>-->
-        <!--            <version>0.6.2</version>-->
-        <!--            <exclusions>-->
-        <!--                <exclusion>-->
-        <!--                    <groupId>io.github.Kloping</groupId>-->
-        <!--                    <artifactId>JvUtils</artifactId>-->
-        <!--                </exclusion>-->
-        <!--            </exclusions>-->
-        <!--        </dependency>-->
-        <!--        <dependency>-->
-        <!--            <groupId>io.github.Kloping</groupId>-->
-        <!--            <artifactId>JvUtils</artifactId>-->
-        <!--            <version>0.4.9-Beta1</version>-->
-        <!--        </dependency>-->
-        <!--mirai-->
-        <!--<dependency>
-            <groupId>top.mrxiaom</groupId>
-            <artifactId>overflow-core-api</artifactId>
-            <version>${mirai-version}</version>
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.11.0</version>
         </dependency>
         <dependency>
-            <groupId>org.bouncycastle</groupId>
-            <artifactId>bcprov-jdk15on</artifactId>
-            <version>1.64</version>
-        </dependency>-->
+            <groupId>top.mrxiaom</groupId>
+            <artifactId>overflow-core</artifactId>
+            <version>2.16.0-db61867-SNAPSHOT</version>
+        </dependency>
         <dependency>
             <groupId>net.mamoe</groupId>
             <artifactId>mirai-core-jvm</artifactId>
-            <version>${mirai-version}</version>
-        </dependency>
-        <dependency>
-            <groupId>net.mamoe</groupId>
-            <artifactId>mirai-console</artifactId>
             <version>${mirai-version}</version>
         </dependency>
         <dependency>
@@ -188,12 +166,6 @@
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
             <version>1.2.73</version>
-        </dependency>
-        <!--gson-->
-        <dependency>
-            <groupId>com.google.code.gson</groupId>
-            <artifactId>gson</artifactId>
-            <version>2.9.0</version>
         </dependency>
         <!--jsoup-->
         <dependency>
