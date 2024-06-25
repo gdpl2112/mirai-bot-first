@@ -37,15 +37,9 @@
     </properties>
     <dependencies>
         <dependency>
-            <groupId>com.mojang</groupId>
-            <artifactId>brigadier</artifactId>
-            <version>1.0.18</version>
-        </dependency>
-        <!--自制框架-->
-        <dependency>
             <groupId>io.github.Kloping</groupId>
             <artifactId>spt-redis</artifactId>
-            <version>0.2.3</version>
+            <version>0.2.4</version>
             <exclusions>
                 <exclusion>
                     <groupId>io.github.Kloping</groupId>
@@ -53,6 +47,7 @@
                 </exclusion>
             </exclusions>
         </dependency>
+        <!--自制框架-->
         <dependency>
             <groupId>io.github.gdpl2112</groupId>
             <artifactId>OneBotV12-WeChat</artifactId>
@@ -67,7 +62,28 @@
         <dependency>
             <groupId>io.github.kloping</groupId>
             <artifactId>bot-qqpd-java</artifactId>
-            <version>1.5.1-L1</version>
+            <version>1.5.1-L2</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>io.github.Kloping</groupId>
+                    <artifactId>SpringTool</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>io.github.Kloping</groupId>
+            <artifactId>JvUtils</artifactId>
+            <version>0.4.9-R3</version>
+        </dependency>
+        <dependency>
+            <groupId>io.github.Kloping</groupId>
+            <artifactId>SpringTool</artifactId>
+            <version>0.6.3-R1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.mojang</groupId>
+            <artifactId>brigadier</artifactId>
+            <version>1.0.18</version>
         </dependency>
         <dependency>
             <groupId>com.google.code.gson</groupId>
