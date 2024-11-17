@@ -86,8 +86,8 @@
             <version>2.11.0</version>
         </dependency>
         <dependency>
-            <groupId>top.mrxiaom</groupId>
-            <artifactId>overflow-core</artifactId>
+            <groupId>top.mrxiaom.mirai</groupId>
+            <artifactId>overflow-core-all</artifactId>
             <version>1.0.0.525-ce542f0-SNAPSHOT</version>
         </dependency>
         <dependency>
