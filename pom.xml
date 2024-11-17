@@ -88,7 +88,7 @@
         <dependency>
             <groupId>top.mrxiaom</groupId>
             <artifactId>overflow-core</artifactId>
-            <version>2.16.0-db61867-SNAPSHOT</version>
+            <version>1.0.0.525-ce542f0-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>net.mamoe</groupId>
