@@ -13,10 +13,10 @@
         <relativePath/>
     </parent>
     <repositories>
-        <repository>
-            <id>s01_snapshots</id>
-            <url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
-        </repository>
+<!--        <repository>-->
+<!--            <id>s01_snapshots</id>-->
+<!--            <url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>-->
+<!--        </repository>-->
         <repository>
             <id>main</id>
             <url>https://repo1.maven.org/maven2/</url>
@@ -29,6 +29,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <mirai-version>2.16.0</mirai-version>
+        <overflow-version>1.0.1</overflow-version>
     </properties>
     <dependencies>
         <dependency>
@@ -83,7 +84,7 @@
         <dependency>
             <groupId>top.mrxiaom.mirai</groupId>
             <artifactId>overflow-core-all</artifactId>
-            <version>1.0.0.525-ce542f0-SNAPSHOT</version>
+            <version>${overflow-version}</version>
         </dependency>
         <dependency>
             <groupId>net.mamoe</groupId>
