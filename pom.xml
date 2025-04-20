@@ -51,7 +51,7 @@
         <dependency>
             <groupId>io.github.kloping</groupId>
             <artifactId>bot-qqpd-java</artifactId>
-            <version>1.5.1-R4</version>
+            <version>1.5.2-R2</version>
             <exclusions>
                 <exclusion>
                     <groupId>io.github.Kloping</groupId>
